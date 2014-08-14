@@ -29,7 +29,7 @@ console.log('J_S Plugin', 'test');
 	
 	plugin.refactor( 'Wotg.Research.Manager', {
         // Меняем один из методов класса
-        'createResearchTreeForHQ': function method() {
+        'createResearchTreeForHQ': function method(hqId) {
             
            	//this.backButton.text = Wotg.controller().lang.get('research.backToRoot');
 		this.isRoot = false;
