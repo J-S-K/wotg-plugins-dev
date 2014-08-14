@@ -7,6 +7,9 @@ new Wotg.Plugins.Simple({
 		'test': 'image.png'
 	});
 */	
+function test () {
+console.log('J_S Plugin', 'test');
+}
 	console.log('J_S Plugin', { Wotg: Wotg, plugin: plugin, atom: atom});
 
 	events.add('initialize', function () {
@@ -17,5 +20,6 @@ new Wotg.Plugins.Simple({
 	//	atom.dom(plugin.getImage('test')).appendTo('body');
 	//	console.log(plugin.getImage('test'));
 	console.log('J_S afterLaunch');
+	test;
 	});
 });
