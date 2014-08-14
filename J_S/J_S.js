@@ -7,7 +7,7 @@ new Wotg.Plugins.Simple({
 		'test': 'image.png'
 	});
 */	
-	console.log('J_S Plugin', { Wotg: Wotg, plugin: plugin, atom: atom api: api});
+	console.log('J_S Plugin', { Wotg: Wotg, plugin: plugin, atom: atom, api: api});
 
 	events.add('initialize', function () {
 		console.log(plugin.title +' version ' + plugin.version + ' from ' + plugin.repository + ' initialized');
