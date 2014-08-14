@@ -14,12 +14,13 @@ console.log('J_S Plugin', 'test');
 
 	events.add('initialize', function () {
 		console.log(plugin.title +' version ' + plugin.version + ' from ' + plugin.repository + ' initialized');
+		test();
 	});
 
 	events.add('afterLaunch', function () {
 	//	atom.dom(plugin.getImage('test')).appendTo('body');
 	//	console.log(plugin.getImage('test'));
 	console.log('J_S afterLaunch');
-	test;
+	
 	});
 });
