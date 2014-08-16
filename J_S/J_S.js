@@ -1,6 +1,6 @@
 new Wotg.Plugins.Simple({
-	title  : 'J_S_',
-	version: '0.2.3'
+	title  : 'J_S',
+	version: '0.2.2'
 }, function (plugin, events) {
 /*
 	plugin.addImagesPreload({
