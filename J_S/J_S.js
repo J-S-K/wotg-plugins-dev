@@ -60,7 +60,11 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.TreeItem, {
 		return this.manager.cardSlotsCoords[this.slot];
 	}
 });
-	function createCard (data) {
+	
+	plugin.refactor( 'Wotg.Research.Manager', {
+        // Меняем один из методов класса
+        'createResearchTreeForHQ': function method(hqId) {
+        	function createCard (data) {
 		jslog({contrl:Wotg.controller()});
 		jslog({wotg:Wotg});
 		jslog({this:this});
@@ -102,10 +106,6 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.TreeItem, {
 		*/
 		
 	}
-	
-	plugin.refactor( 'Wotg.Research.Manager', {
-        // Меняем один из методов класса
-        'createResearchTreeForHQ': function method(hqId) {
             
            	//this.backButton.text = Wotg.controller().lang.get('research.backToRoot');
 		this.isRoot = false;
