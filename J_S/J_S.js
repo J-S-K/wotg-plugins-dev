@@ -26,7 +26,8 @@ console.log('J_S Plugin', 'test');
 	console.log('J_S afterLaunch');
 	
 	});
-	atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.TreeItem, {
+	//========
+atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.TreeItem, {
 
 	size     : new Size(132, 130),
 	slot     : null,
@@ -59,7 +60,7 @@ console.log('J_S Plugin', 'test');
 		return this.manager.cardSlotsCoords[this.slot];
 	}
 });
-	function createCard: (data) {
+	function createCard (data) {
 		
 		var elem = new Wotg.Research.HqCardItem(this.app.layer, {
 			manager: this,
