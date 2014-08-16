@@ -37,10 +37,10 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.TreeItem, {
 		2: new Point(728, 0),//101
 		3: new Point(972, 0),
 		4: new Point(1217, 0),
-		5: new Point(240, 200), //300
-		6: new Point(484, 200),
-		7: new Point(728, 200),
-		8: new Point(1217, 200)
+		5: new Point(240, 100), //300
+		6: new Point(484, 120),
+		7: new Point(728, 140),
+		8: new Point(1217, 160)
 
 	},
 	configure: function method () {
