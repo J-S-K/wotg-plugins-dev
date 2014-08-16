@@ -66,8 +66,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.TreeItem, {
         'createResearchTreeForHQ': function method(hqId) {
         
         var createCard = function  (data) {
-		jslog({contrl:Wotg.controller()});
-		jslog({wotg:Wotg});
+		jslog({data:data});
 		jslog({this:this});
 		//jslog({manag:Wotg.Research.Manager()});
 		var elem = new Wotg.Research.HqCardItem(this.app.layer, {
