@@ -64,7 +64,8 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.TreeItem, {
 	plugin.refactor( 'Wotg.Research.Manager', {
         // Меняем один из методов класса
         'createResearchTreeForHQ': function method(hqId) {
-        	function createCard (data) {
+        
+        var createCard = function  (data) {
 		jslog({contrl:Wotg.controller()});
 		jslog({wotg:Wotg});
 		jslog({this:this});
@@ -75,8 +76,8 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.TreeItem, {
 		});
 		this.app.mouseHandler.subscribe(elem);
 		this.elems.push(elem);
-	}	
-	function createHq (data, list) {
+	};	
+	var createHq= function  (data, list) {
 		jslog({this:this});
 		for (var i = 0 ; i < list.length; i++) {
 			
