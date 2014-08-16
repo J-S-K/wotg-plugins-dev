@@ -76,7 +76,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.TreeItem, {
 	plugin.refactor( 'Wotg.Research.HQItem', {
         // Меняем один из методов класса
         'getPos': function method() {
-        	if (this.isCurrent) return new Point(0, 0);
+        	if (this.isCurrent) return new Point(180, 50);
 		if (this.isRootTree) return this.manager.hqSlotsCoords[this.slot];
 		return this.manager.cardSlotsCoords[this.slot];
 	}
