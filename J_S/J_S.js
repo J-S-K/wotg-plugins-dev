@@ -61,13 +61,14 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.TreeItem, {
 	}
 });
 	function createCard (data) {
+		var manager = Wotg.Research.Manager;
 		
-		var elem = new Wotg.Research.HqCardItem(this.app.layer, {
-			manager: this,
+		var elem = new Wotg.Research.HqCardItem(manager.app.layer, {
+			manager: manager,
 			data: data
 		});
-		this.app.mouseHandler.subscribe(elem);
-		this.elems.push(elem);
+		manager.app.mouseHandler.subscribe(elem);
+		manager.elems.push(elem);
 	}	
 	function createHq (data, list) {
 		for (var i = 0 ; i < list.length; i++) {
