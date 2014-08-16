@@ -10,14 +10,10 @@ new Wotg.Plugins.Simple({
 function jslog(text) {
 	console.log('JS', text)
 }
-function test () {
-console.log('J_S Plugin', 'test');
-}
-	console.log('J_S Plugin', { Wotg: Wotg, Controller: Wotg.controller(), plugin: plugin, atom: atom});
 
 	events.add('initialize', function () {
 		console.log(plugin.title +' version ' + plugin.version + ' from ' + plugin.repository + ' initialized');
-		test();
+
 	});
 
 	events.add('afterLaunch', function () {
@@ -88,9 +84,6 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.TreeItem, {
         'createResearchTreeForHQ': function method(hqId) {
         
         var createCard = function  (data) {
-		jslog({data:data});
-		jslog({this:this});
-		//jslog({manag:Wotg.Research.Manager()});
 		var elem = new Wotg.Research.HqCardItem(this.app.layer, {
 			manager: this,
 			data: data
@@ -99,15 +92,12 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.TreeItem, {
 		this.elems.push(elem);
 	}.bind(this);	
 	var createHq= function  (data, list) {
-		jslog({this:this});
-		
 		var elem = new Wotg.Research.HQItem(this.app.layer, {
 			manager: this,
 			data: data,
 			isCurrent: true,
 			isRootTree: false
 		});
-		console.log(elem);
 		this.app.mouseHandler.subscribe(elem);
 		this.elems.push(elem);
 		
@@ -116,27 +106,6 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.TreeItem, {
 			createCard(list[i]);
 		}
 		
-		/*
-		var elem = new Wotg.Research.HQItem(this.app.layer, {
-			manager: this,
-			data: data,
-			isCurrent: isCurrent,
-			isRootTree: isRootTree
-		});
-					
-		Wotg.openPopup('ResearchHqSet', {
-				proto: this.proto,
-				manager: this.manager
-			});
-			Wotg.Research.HQSet
-			
-		this.model = new Wotg.Card.Models.HqResearch(this.proto, this.data.exp);
-		this.view = new Wotg.Card.Views.TreeHqOpened(this.model);
-		this.view.events.add('redraw', this.redraw);
-		
-		this.app.mouseHandler.subscribe(elem);
-		this.elems.push(elem);
-		*/
 		
 	}.bind(this);
             
