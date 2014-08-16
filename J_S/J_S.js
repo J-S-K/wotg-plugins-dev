@@ -48,7 +48,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.TreeItem, {
 		13: new Point(159, 679),
 		14: new Point(648, 679),
 		15: new Point(1139, 679)
-	}
+	},
 	configure: function method () {
 		method.previous.call(this);
 
