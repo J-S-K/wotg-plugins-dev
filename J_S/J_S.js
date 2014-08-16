@@ -43,7 +43,7 @@ console.log('J_S Plugin', 'test');
 			if (Wotg.controller().protos.get(list[i].card).type.toLowerCase() != 'hq') {
 				this.createCard(list[i]);
 			} else {
-				this.createHq(list[i], false, false);
+			//	this.createHq(list[i], false, false);
 			}
 		}
 		setTimeout(function(){
