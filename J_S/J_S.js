@@ -88,7 +88,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.TreeItem, {
 		jslog({this:this});
 		//jslog({manag:Wotg.Research.Manager()});
 		var elem = new Wotg.Research.HqCardItem(this.app.layer, {
-			manager: this.manager,
+			manager: this,
 			data: data
 		});
 		this.app.mouseHandler.subscribe(elem);
