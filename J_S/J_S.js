@@ -13,7 +13,7 @@ function jslog(text) {
 function test () {
 console.log('J_S Plugin', 'test');
 }
-	console.log('J_S Plugin', { Wotg: Wotg, Controller: Wotg.Controller(), plugin: plugin, atom: atom});
+	console.log('J_S Plugin', { Wotg: Wotg, Controller: Wotg.controller(), plugin: plugin, atom: atom});
 
 	events.add('initialize', function () {
 		console.log(plugin.title +' version ' + plugin.version + ' from ' + plugin.repository + ' initialized');
@@ -62,8 +62,8 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.TreeItem, {
 });
 	function createCard (data) {
 		//var manager = Wotg.Research.Manager();
-		jslog({contrl:Wotg.Controller()});
-		jslog({this:this,  manager:manager});
+		jslog({contrl:Wotg.controller()});
+		jslog({this:this,  manager:wotg});
 		var elem = new Wotg.Research.HqCardItem(manager.app.layer, {
 			manager: manager,
 			data: data
