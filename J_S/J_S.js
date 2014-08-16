@@ -26,7 +26,54 @@ console.log('J_S Plugin', 'test');
 	console.log('J_S afterLaunch');
 	
 	});
-	function createHq (data, isCurrent, isRootTree) {
+	atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.TreeItem, {
+
+	size     : new Size(132, 130),
+	slot     : null,
+
+	configure: function method () {
+		method.previous.call(this);
+
+		this.slot    = this.data.slot;
+		this.shape   = new Rectangle(this.getPos(), this.size);
+		this.textShape   = new Rectangle(0, 0, this.shape.width, 20).moveTo(this.shape.from);
+
+		this.events.add( 'mouseup', function (e) {
+			Wotg.openPopup('ResearchCardView', {
+				proto: this.proto,
+				data: this.data,
+				manager: this.manager
+			});
+		}.bind(this));
+
+		this.model = new Wotg.Card.Models.Model(this.proto);
+		this.view = new Wotg.Card.Views.TreeLeaf(this.model);
+		this.view.events.add('redraw', this.redraw);
+	},
+
+	update: function() {
+		this.redraw();
+	},
+
+	getPos: function() {
+		return this.manager.cardSlotsCoords[this.slot];
+	}
+});
+	function createCard: (data) {
+		
+		var elem = new Wotg.Research.HqCardItem(this.app.layer, {
+			manager: this,
+			data: data
+		});
+		this.app.mouseHandler.subscribe(elem);
+		this.elems.push(elem);
+	}	
+	function createHq (data, list) {
+		for (var i = 0 ; i < list.length; i++) {
+			
+			createCard(list[i]);
+		}
+		
 		/*
 		var elem = new Wotg.Research.HQItem(this.app.layer, {
 			manager: this,
@@ -63,7 +110,7 @@ console.log('J_S Plugin', 'test');
 		var listHq = this.model.getCardListForHQ(hqId, true);
 		var rootData = this.model.getCardById(hqId);
 		jslog({list:list, rootData:rootData, listHq:listHq});
-		createHq(rootData, true);
+		createHq(rootData, listHq);
 		for (var i = 0 ; i < list.length; i++) {
 			if (Wotg.controller().protos.get(list[i].card).type.toLowerCase() != 'hq') {
 				this.createCard(list[i]);
