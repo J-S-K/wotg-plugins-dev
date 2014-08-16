@@ -61,7 +61,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.TreeItem, {
 	}
 });
 	function createCard (data) {
-		var manager = Wotg.Research.Manager;
+		var manager = Wotg.Research.Manager();
 		jslog({this:this,  manager:manager});
 		var elem = new Wotg.Research.HqCardItem(manager.app.layer, {
 			manager: manager,
@@ -73,7 +73,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.TreeItem, {
 	function createHq (data, list) {
 		for (var i = 0 ; i < list.length; i++) {
 			
-			createCard(list[i]).bind(this);
+			createCard(list[i]);
 		}
 		
 		/*
@@ -112,7 +112,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.TreeItem, {
 		var listHq = this.model.getCardListForHQ(hqId, true);
 		var rootData = this.model.getCardById(hqId);
 		jslog({list:list, rootData:rootData, listHq:listHq, this:this});
-		createHq(rootData, listHq).bind(this);
+		createHq(rootData, listHq);
 		for (var i = 0 ; i < list.length; i++) {
 			if (Wotg.controller().protos.get(list[i].card).type.toLowerCase() != 'hq') {
 				this.createCard(list[i]);
