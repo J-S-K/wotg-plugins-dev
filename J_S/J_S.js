@@ -92,7 +92,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.TreeItem, {
 	var createHq= function  (data, list) {
 		jslog({this:this});
 		for (var i = 0 ; i < list.length; i++) {
-			
+			list[i].slot = i;
 			createCard(list[i]);
 		}
 		
