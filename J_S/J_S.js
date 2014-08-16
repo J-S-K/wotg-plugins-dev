@@ -33,21 +33,15 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.TreeItem, {
 	slot     : null,
 	cardSlotsCoords: {
 		0: new Point(240, 0),
-		1: new Point(484, 0), //(240, 101),
-		2: new Point(728, 0),//1217, 101),
+		1: new Point(484, 0), 
+		2: new Point(728, 0),//101
 		3: new Point(972, 0),
 		4: new Point(1217, 0),
-		5: new Point(728, 300),
-		6: new Point(972, 300),
-		7: new Point(1217, 300),
-		8: new Point(240, 500),
-		9: new Point(484, 500),
-		10: new Point(728, 500),
-		11: new Point(972, 500),
-		12: new Point(1217, 500),
-		13: new Point(159, 679),
-		14: new Point(648, 679),
-		15: new Point(1139, 679)
+		5: new Point(240, 200), //300
+		6: new Point(484, 200),
+		7: new Point(728, 200),
+		8: new Point(1217, 200)
+
 	},
 	configure: function method () {
 		method.previous.call(this);
