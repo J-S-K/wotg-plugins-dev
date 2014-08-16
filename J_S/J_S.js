@@ -65,7 +65,6 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.TreeItem, {
 	},
 
 	getPos: function() {
-		jslog({this:this});
 		return this.cardSlotsCoords[this.slot];
 	}
 });
