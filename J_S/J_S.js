@@ -1,5 +1,5 @@
 new Wotg.Plugins.Simple({
-	title  : 'J_S',
+	title  : 'J_S_',
 	version: '0.2.3'
 }, function (plugin, events) {
 /*
