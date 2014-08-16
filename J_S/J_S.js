@@ -91,6 +91,17 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.TreeItem, {
 	}.bind(this);	
 	var createHq= function  (data, list) {
 		jslog({this:this});
+		
+		var elem = new Wotg.Research.HQItem(this.app.layer, {
+			manager: this,
+			data: data,
+			isCurrent: true,
+			isRootTree: false
+		});
+		console.log(elem);
+		this.app.mouseHandler.subscribe(elem);
+		this.elems.push(elem);
+		
 		for (var i = 0 ; i < list.length; i++) {
 			list[i].slot = i+1;
 			createCard(list[i]);
