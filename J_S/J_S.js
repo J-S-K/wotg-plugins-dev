@@ -13,7 +13,7 @@ function jslog(text) {
 function test () {
 console.log('J_S Plugin', 'test');
 }
-	console.log('J_S Plugin', { Wotg: Wotg, plugin: plugin, atom: atom});
+	console.log('J_S Plugin', { Wotg: Wotg, Controller: Wotg.Controller(), plugin: plugin, atom: atom});
 
 	events.add('initialize', function () {
 		console.log(plugin.title +' version ' + plugin.version + ' from ' + plugin.repository + ' initialized');
