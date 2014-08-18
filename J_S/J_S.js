@@ -148,15 +148,15 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.TreeItem, {
 
 	},
 	HQsmallCards: {
-		0: new Point(240, 0),
-		1: new Point(484, 0), 
-		2: new Point(728, 0),//101
-		3: new Point(972, 0),
-		4: new Point(1217, 0),
-		5: new Point(484, 140),
-		6: new Point(728, 140),
-		7: new Point(972, 140),
-		8: new Point(1217, 140)
+		0: new Point(108, 0),
+		1: new Point(267, 0), 
+		2: new Point(444, 0),//101
+		3: new Point(621, 0),
+		4: new Point(799, 0),
+		5: new Point(267, 125),
+		6: new Point(444, 125),
+		7: new Point(621, 125),
+		8: new Point(799, 125)
 		
 
 	}
