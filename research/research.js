@@ -27,19 +27,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.TreeItem, {
 
 	size     : new Size(132, 130),
 	slot     : null,
-	cardSlotsCoords: {
-		0: new Point(240, 0),
-		1: new Point(484, 0), 
-		2: new Point(728, 0),//101
-		3: new Point(972, 0),
-		4: new Point(1217, 0),
-		5: new Point(484, 140),
-		6: new Point(728, 140),
-		7: new Point(972, 140),
-		8: new Point(1217, 140)
-		
 
-	},
 	configure: function method () {
 		method.previous.call(this);
 
@@ -65,15 +53,30 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.TreeItem, {
 	},
 
 	getPos: function() {
-		return this.cardSlotsCoords[this.slot];
+		return this.manager.HQcardSlotsCoords[this.slot];
 	}
 });
+	//удалить если будут меняться координаты штаба 
 	plugin.refactor( 'Wotg.Research.HQItem', {
         // Меняем один из методов класса
         'getPos': function method() {
-        	if (this.isCurrent) return new Point(150, 50);
+        	if (this.isCurrent) return this.manager.JShqSlotsCoords[0];
 		if (this.isRootTree) return this.manager.hqSlotsCoords[this.slot];
 		return this.manager.cardSlotsCoords[this.slot];
+	}
+	});
+	
+	plugin.refactor( 'Wotg.Research.Manager', {
+        // Меняем один из методов класса
+        'setViewMode': function method(viewMode) {
+        	method.previous.apply( this, arguments );
+        if (viewMode == 'compact') {
+			this.JShqSlotsCoords = this.JSsmallHq;
+			this.HQcardSlotsCoords = this.HQsmallCards;
+		} else {
+			this.JShqSlotsCoords = this.JSbigHq;
+			this.HQcardSlotsCoords = this.HQbigCards;
+		}
 	}
 	});
         	
@@ -129,6 +132,42 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.TreeItem, {
 			lines.drawLines(false);
 		}.bind(this), 50);
 
-        }
+        },
+        cardSlotsCoords: {},
+        HQbigCards: {
+		0: new Point(240, 0),
+		1: new Point(484, 0), 
+		2: new Point(728, 0),//101
+		3: new Point(972, 0),
+		4: new Point(1217, 0),
+		5: new Point(484, 140),
+		6: new Point(728, 140),
+		7: new Point(972, 140),
+		8: new Point(1217, 140)
+		
+
+	},
+	HQsmallCards: {
+		0: new Point(108, 0),
+		1: new Point(267, 0), 
+		2: new Point(444, 0),//101
+		3: new Point(621, 0),
+		4: new Point(799, 0),
+		5: new Point(267, 120),
+		6: new Point(444, 120),
+		7: new Point(621, 120),
+		8: new Point(799, 120)
+		
+
+	},
+	JShqSlotsCoords :{},
+	JSbigHq : {
+		0: new Point(150, 50)
+		
+	},
+	JSsmallHq:{
+		0: new Point(0, 50)
+	}
+        
     });
 });
