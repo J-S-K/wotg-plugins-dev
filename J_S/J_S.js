@@ -60,7 +60,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.TreeItem, {
 	plugin.refactor( 'Wotg.Research.HQItem', {
         // Меняем один из методов класса
         'getPos': function method() {
-        	if (this.isCurrent) return new Point(150, 50);
+        	if (this.isCurrent) return JShqSlotsCoords[0];
 		if (this.isRootTree) return this.manager.hqSlotsCoords[this.slot];
 		return this.manager.cardSlotsCoords[this.slot];
 	}
@@ -71,10 +71,10 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.TreeItem, {
         'setViewMode': function method(viewMode) {
         	method.previous.apply( this, arguments );
         if (viewMode == 'compact') {
-			//this.hqSlotsCoords = this.smallHq;
+			this.JShqSlotsCoords = this.JSsmallHq;
 			this.HQcardSlotsCoords = this.HQsmallCards;
 		} else {
-			//this.hqSlotsCoords = this.bigHq;
+			this.JShqSlotsCoords = this.JSbigHq;
 			this.HQcardSlotsCoords = this.HQbigCards;
 		}
 	}
@@ -153,12 +153,20 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.TreeItem, {
 		2: new Point(444, 0),//101
 		3: new Point(621, 0),
 		4: new Point(799, 0),
-		5: new Point(267, 125),
-		6: new Point(444, 125),
-		7: new Point(621, 125),
-		8: new Point(799, 125)
+		5: new Point(267, 120),
+		6: new Point(444, 120),
+		7: new Point(621, 120),
+		8: new Point(799, 120)
 		
 
+	},
+	JShqSlotsCoords :{},
+	JSbigHq : {
+		0: new Point(150, 50)
+		
+	},
+	JSsmallHq:{
+		0: new Point(0, 50)
 	}
         
     });
