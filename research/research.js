@@ -38,7 +38,7 @@ new Wotg.Plugins.Simple({
         }
     });
 
-    plugin.refactor('Wotg.Research.Manager', {
+    plugin.refactor( 'Wotg.Research.Manager', {
         // Меняем один из методов класса
         'setViewMode': function method(viewMode) {
             method.previous.apply(this, arguments);
@@ -49,102 +49,87 @@ new Wotg.Plugins.Simple({
                 this.JShqSlotsCoords = this.JSbigHq;
                 this.HQcardSlotsCoords = this.HQbigCards;
             }
-        }
-    });
-
-
-    plugin.refactor('Wotg.Research.Manager', {
-        // Меняем один из методов класса
+        },
+        'createHqCard': function  (data) {
+		var elem = new Wotg.Research.HqCardItem(this.app.layer, {
+			manager: this,
+			data: data
+		});
+		this.app.mouseHandler.subscribe(elem);
+		this.elems.push(elem);
+	},
+	'createHqHq': function  (data, list) {
+		var elem = new Wotg.Research.HQItem(this.app.layer, {
+			manager: this,
+			data: data,
+			isCurrent: true,
+			isRootTree: false
+		});
+		this.app.mouseHandler.subscribe(elem);
+		this.elems.push(elem);
+		for (var i = 0 ; i < list.length; i++) {
+			list[i].slot = i+1;
+			this.createHqCard(list[i]);
+		}
+	},
         'createResearchTreeForHQ': function method(hqId) {
-
-            var createCard = function(data) {
-                var elem = new Wotg.Research.HqCardItem(this.app.layer, {
-                    manager: this,
-                    data: data
-                });
-                this.app.mouseHandler.subscribe(elem);
-                this.elems.push(elem);
-            }.bind(this);
-            var createHq = function(data, list) {
-                var elem = new Wotg.Research.HQItem(this.app.layer, {
-                    manager: this,
-                    data: data,
-                    isCurrent: true,
-                    isRootTree: false
-                });
-                this.app.mouseHandler.subscribe(elem);
-                this.elems.push(elem);
-
-                for (var i = 0; i < list.length; i++) {
-                    list[i].slot = i + 1;
-                    createCard(list[i]);
-                }
-
-
-            }.bind(this);
-
-            //this.backButton.text = Wotg.controller().lang.get('research.backToRoot');
-            this.isRoot = false;
-            this.selector.hide();
-            this.destroyElems();
-            var list = this.model.getCardListForHQ(hqId);
-            var listHq = this.model.getCardListForHQ(hqId, true);
-            var rootData = this.model.getCardById(hqId);
-            jslog({
-                list: list,
-                rootData: rootData,
-                listHq: listHq,
-                this: this
-            });
-            createHq(rootData, listHq);
-            for (var i = 0; i < list.length; i++) {
-                if (Wotg.controller().protos.get(list[i].card).type.toLowerCase() != 'hq') {
-                    this.createCard(list[i]);
-                } else {
-                    this.createHq(list[i], false, false);
-                }
-            }
-            setTimeout(function() {
-                var lines = new Wotg.Research.Lines(this.app.linesLayer.ctx, this.elems, this);
-                lines.drawLines(false);
-            }.bind(this), 50);
+           	//this.backButton.text = Wotg.controller().lang.get('research.backToRoot');
+		this.isRoot = false;
+		this.selector.hide();
+		this.destroyElems();
+		var list = this.model.getCardListForHQ(hqId);
+		var listHq = this.model.getCardListForHQ(hqId, true);
+		var rootData = this.model.getCardById(hqId);
+		jslog({list:list, rootData:rootData, listHq:listHq, this:this});
+		this.createHqHq(rootData, listHq);
+		for (var i = 0 ; i < list.length; i++) {
+			if (Wotg.controller().protos.get(list[i].card).type.toLowerCase() != 'hq') {
+				this.createCard(list[i]);
+			} else {
+				this.createHq(list[i], false, false);
+			}
+		}
+		setTimeout(function(){
+			var lines = new Wotg.Research.Lines(this.app.linesLayer.ctx, this.elems, this);
+			lines.drawLines(false);
+		}.bind(this), 50);
 
         },
-        cardSlotsCoords: {},
-        HQbigCards: {
-            0: new Point(240, 0),
-            1: new Point(484, 0),
-            2: new Point(728, 0), //101
-            3: new Point(972, 0),
-            4: new Point(1217, 0),
-            5: new Point(484, 140),
-            6: new Point(728, 140),
-            7: new Point(972, 140),
-            8: new Point(1217, 140)
+        'cardSlotsCoords': {},
+        'HQbigCards': {
+		0: new Point(240, 0),
+		1: new Point(484, 0), 
+		2: new Point(728, 0),//101
+		3: new Point(972, 0),
+		4: new Point(1217, 0),
+		5: new Point(484, 140),
+		6: new Point(728, 140),
+		7: new Point(972, 140),
+		8: new Point(1217, 140)
+		
 
+	},
+	'HQsmallCards': {
+		0: new Point(108, 0),
+		1: new Point(267, 0), 
+		2: new Point(444, 0),//101
+		3: new Point(621, 0),
+		4: new Point(799, 0),
+		5: new Point(267, 120),
+		6: new Point(444, 120),
+		7: new Point(621, 120),
+		8: new Point(799, 120)
+		
 
-        },
-        HQsmallCards: {
-            0: new Point(108, 0),
-            1: new Point(267, 0),
-            2: new Point(444, 0), //101
-            3: new Point(621, 0),
-            4: new Point(799, 0),
-            5: new Point(267, 120),
-            6: new Point(444, 120),
-            7: new Point(621, 120),
-            8: new Point(799, 120)
-
-
-        },
-        JShqSlotsCoords: {},
-        JSbigHq: {
-            0: new Point(150, 50)
-
-        },
-        JSsmallHq: {
-            0: new Point(0, 50)
-        }
-
+	},
+	'JShqSlotsCoords' :{},
+	'JSbigHq' : {
+		0: new Point(150, 50)
+		
+	},
+	'JSsmallHq':{
+		0: new Point(0, 50)
+	}
+        
     });
 });
