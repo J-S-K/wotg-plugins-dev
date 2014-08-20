@@ -58,17 +58,15 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
         	
 	plugin.refactor( 'Wotg.Research.Manager', {
         // Меняем один из методов класса
-        'createResearchTreeForHQ': function method(hqId) {
-        
-        var createCard = function  (data) {
+        'createCard': function  (data) {
 		var elem = new Wotg.Research.HqCardItem(this.app.layer, {
 			manager: this,
 			data: data
 		});
 		this.app.mouseHandler.subscribe(elem);
 		this.elems.push(elem);
-	}.bind(this);	
-	var createHq= function  (data, list) {
+	},
+	'createHq': function  (data, list) {
 		var elem = new Wotg.Research.HQItem(this.app.layer, {
 			manager: this,
 			data: data,
@@ -84,8 +82,8 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		}
 		
 		
-	}.bind(this);
-            
+	},
+        'createResearchTreeForHQ': function method(hqId) {
            	//this.backButton.text = Wotg.controller().lang.get('research.backToRoot');
 		this.isRoot = false;
 		this.selector.hide();
