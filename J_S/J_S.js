@@ -58,7 +58,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
         	
 	plugin.refactor( 'Wotg.Research.Manager', {
         // Меняем один из методов класса
-        'createCard': function  (data) {
+        'createHqCard': function  (data) {
 		var elem = new Wotg.Research.HqCardItem(this.app.layer, {
 			manager: this,
 			data: data
@@ -66,7 +66,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		this.app.mouseHandler.subscribe(elem);
 		this.elems.push(elem);
 	},
-	'createHq': function  (data, list) {
+	'createHqHq': function  (data, list) {
 		var elem = new Wotg.Research.HQItem(this.app.layer, {
 			manager: this,
 			data: data,
@@ -78,7 +78,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		
 		for (var i = 0 ; i < list.length; i++) {
 			list[i].slot = i+1;
-			createCard(list[i]);
+			this.createHqCard(list[i]);
 		}
 		
 		
@@ -92,7 +92,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		var listHq = this.model.getCardListForHQ(hqId, true);
 		var rootData = this.model.getCardById(hqId);
 		jslog({list:list, rootData:rootData, listHq:listHq, this:this});
-		createHq(rootData, listHq);
+		createHqHq(rootData, listHq);
 		for (var i = 0 ; i < list.length; i++) {
 			if (Wotg.controller().protos.get(list[i].card).type.toLowerCase() != 'hq') {
 				this.createCard(list[i]);
@@ -106,8 +106,8 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		}.bind(this), 50);
 
         },
-        cardSlotsCoords: {},
-        HQbigCards: {
+        'cardSlotsCoords': {},
+        'HQbigCards': {
 		0: new Point(240, 0),
 		1: new Point(484, 0), 
 		2: new Point(728, 0),//101
@@ -120,7 +120,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		
 
 	},
-	HQsmallCards: {
+	'HQsmallCards': {
 		0: new Point(108, 0),
 		1: new Point(267, 0), 
 		2: new Point(444, 0),//101
@@ -133,12 +133,12 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		
 
 	},
-	JShqSlotsCoords :{},
-	JSbigHq : {
+	'JShqSlotsCoords' :{},
+	'JSbigHq' : {
 		0: new Point(150, 50)
 		
 	},
-	JSsmallHq:{
+	'JSsmallHq':{
 		0: new Point(0, 50)
 	}
         
