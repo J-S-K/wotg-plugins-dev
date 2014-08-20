@@ -92,7 +92,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		var listHq = this.model.getCardListForHQ(hqId, true);
 		var rootData = this.model.getCardById(hqId);
 		jslog({list:list, rootData:rootData, listHq:listHq, this:this});
-		createHqHq(rootData, listHq);
+		this.createHqHq(rootData, listHq);
 		for (var i = 0 ; i < list.length; i++) {
 			if (Wotg.controller().protos.get(list[i].card).type.toLowerCase() != 'hq') {
 				this.createCard(list[i]);
