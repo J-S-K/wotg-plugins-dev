@@ -8,7 +8,7 @@ new Wotg.Plugins.Simple({
 	});
 */
     function jslog(text) {
-        console.log('JS', text)
+        console.log.apply( console, ['[JS Log] '].append(arguments) );
     }
 
     events.add('initialize', function() {
@@ -23,38 +23,10 @@ new Wotg.Plugins.Simple({
 
     });
     //========
-    atom.declare('Wotg.Research.HqCardItem', Wotg.Research.TreeItem, {
-
-        size: new Size(132, 130),
-        slot: null,
-
-        configure: function method() {
-            method.previous.call(this);
-
-            this.slot = this.data.slot;
-            this.shape = new Rectangle(this.getPos(), this.size);
-            this.textShape = new Rectangle(0, 0, this.shape.width, 20).moveTo(this.shape.from);
-
-            this.events.add('mouseup', function(e) {
-                Wotg.openPopup('ResearchCardView', {
-                    proto: this.proto,
-                    data: this.data,
-                    manager: this.manager
-                });
-            }.bind(this));
-
-            this.model = new Wotg.Card.Models.Model(this.proto);
-            this.view = new Wotg.Card.Views.TreeLeaf(this.model);
-            this.view.events.add('redraw', this.redraw);
-        },
-
-        update: function() {
-            this.redraw();
-        },
-
-        getPos: function() {
-            return this.manager.HQcardSlotsCoords[this.slot];
-        }
+    atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
+	getPos: function() {
+		return this.manager.HQcardSlotsCoords[this.slot];
+	}
     });
     //удалить если будут меняться координаты штаба 
     plugin.refactor('Wotg.Research.HQItem', {
