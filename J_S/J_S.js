@@ -200,7 +200,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		jslog(this.model, this.defaultNation );
 		
 		var list = this.model.getTreeByNation(this.defaultNation );
-		for (var i = 0 ; i < 25; i++) { //list.length
+		for (var i = 0 ; i < list.length; i++) { //list.length
 			list[i].slot = i+1;
 		//	this.createHqCard(list[i]);
 			var elem = new Wotg.Research.AllCardItem(this.app.layer, {
@@ -231,7 +231,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		hight = 125,
 		x = this.slot % columns,
 		y= (this.slot-x) / columns;
-		return new Point (x*width,y*hight);
+		return new Point (x*width,y*hight+40);
 	}
     });
 
