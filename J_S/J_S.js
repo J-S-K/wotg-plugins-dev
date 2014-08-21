@@ -71,7 +71,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		
 		if (data.parenthq) {
 			var parenthq = this.model.getCardById(data.parenthq);
-			parenthq.slot=0;
+			parenthq.slot=10;
 			this.createHq(parenthq, false, false);
 		}
 		var elem = new Wotg.Research.HQItem(this.app.layer, {
