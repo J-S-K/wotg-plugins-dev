@@ -153,8 +153,8 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 						jslog('boom');
 					}.bind(this),
 					'art':{
-						'offset': {new Point(200,200)
-						}
+						'offset': new Point(200,200)
+						
 					}
 				},
 				'tree-root'
