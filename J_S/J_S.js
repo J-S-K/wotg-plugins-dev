@@ -141,6 +141,23 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 	'JSsmallHq':{
 		0: new Point(0, 50)
 	}
-        
+    //========================================================   
+    	,
+    	'createBackButton': function method() {
+    		method.previous.apply( this, arguments );
+    		if (!this.isRoot) {
+			this.allButton = Wotg.controller().ui.buttons.header.create({
+					onActivate: function(){
+						//function
+						jslog('boom');
+					}.bind(this)
+				},
+				'tree-root'
+			);
+			jslog(this.allButton);
+			this.allButton.element.addClass("all-button").appendTo(targetNode);
+		}
     });
+
+    
 });
