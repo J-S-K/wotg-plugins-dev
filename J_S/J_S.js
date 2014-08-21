@@ -196,6 +196,14 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 			}
 		}
 		*/
+		jslog(this.model, this.defaultNation );
+		
+		var list = this.model.getTreeByNation(this.defaultNation );
+		for (var i = 0 ; i < list.length; i++) {
+			list[i].slot = i+1;
+			this.createHqCard(list[i]);
+		}
+		
 		this.createBackButton();
 
 		this.flagElem = atom.dom.create('div').addClass('big-nation').appendTo('body');
