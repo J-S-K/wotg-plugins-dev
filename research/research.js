@@ -161,11 +161,11 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		0: new Point(0, 0),
 		1: new Point(108, 80),
 		2: new Point(799, 80),
-		3: new Point(108, 260),
-		4: new Point(267, 260),
-		5: new Point(444, 260),
-		6: new Point(621, 260),
-		7: new Point(799, 260),
+		3: new Point(108, 265),
+		4: new Point(267, 265),
+		5: new Point(444, 265),
+		6: new Point(621, 265),
+		7: new Point(799, 265),
 		8: new Point(108, 410),
 		9: new Point(257, 410),
 		10: new Point(434, 410),
@@ -253,6 +253,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
     });
     
     plugin.refactor( 'Wotg.Research.HQItem', {
+    	'size'       : new Size(287, 84),
         'sizeCurrent': new Size(287, 168) //342,200 ----- 300,84
     });
     
