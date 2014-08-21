@@ -241,7 +241,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
     plugin.refactor( 'Wotg.Research.HQItem', {
         // Меняем один из методов класса
         'configure': function  method() {
-        	//method.previous.call(this);
+        	method.previous.call(this);
 
 		this.isCurrent = this.settings.get('isCurrent');
 		this.isRootTree = this.settings.get('isRootTree');
