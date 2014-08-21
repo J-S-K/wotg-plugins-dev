@@ -201,7 +201,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		var list = this.model.getTreeByNation(this.defaultNation );
 		for (var i = 0 ; i < list.length; i++) {
 			list[i].slot = i+1;
-			this.createHqCard(list[i]);
+		//	this.createHqCard(list[i]);
 		}
 		
 		this.createBackButton();
