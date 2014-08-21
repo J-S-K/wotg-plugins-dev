@@ -144,42 +144,22 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
     //========================================================   
     	,
     	'createBackButton': function method() {
-    		//method.previous.apply( this, arguments );
-    		this.hangarButton = Wotg.controller().ui.buttons.header.create({
-				onActivate: function(){
-					Wotg.controller().screens.open ( 'Hangar' );
-				}.bind(this)
-			},
-			'hangar'
-		);
-		var targetNode = Wotg.controller().screens.headerNode;
-		this.hangarButton.element.addClass("hangar-button").appendTo(targetNode);
+    		method.previous.apply( this, arguments );
 
-		if (!this.isRoot) {
-			this.backButton = Wotg.controller().ui.buttons.header.create({
-					onActivate: function(){
-						Wotg.openScreen('Research', { nation : this.defaultNation });
-					}.bind(this)
-				},
-				'tree-root'
-			);
-			this.backButton.element.addClass("root-button").appendTo(targetNode);
-		}
-    		//var targetNode = Wotg.controller().screens.headerNode;
     		if (!this.isRoot) {
 			this.allButton = Wotg.controller().ui.buttons.header.create({
 					onActivate: function(){
 						//function
 						jslog('boom');
-					}.bind(this),
-					'art':{
-						'offset': new Point(200,200)
-						
-					}
+					}.bind(this)
 				},
 				'tree-root'
 			);
 			jslog(this.allButton);
+			var targetNode = Wotg.controller().screens.headerNode;
+			this.allButton.element.css('position', 'asolute')
+				.css('left', 100 )
+				.css('top', 100 )
 			this.allButton.element.addClass("all-button").appendTo(targetNode);
 		}
     	}
