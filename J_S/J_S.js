@@ -31,6 +31,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		return this.manager.HQcardSlotsCoords[this.slot];
 	}
 });
+
 	//удалить если будут меняться координаты штаба 
 	plugin.refactor( 'Wotg.Research.HQItem', {
         // Меняем один из методов класса
@@ -202,7 +203,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		for (var i = 0 ; i < 8; i++) { //list.length
 			list[i].slot = i+1;
 		//	this.createHqCard(list[i]);
-			var elem = new Wotg.Research.HqCardItem(this.app.layer, {
+			var elem = new Wotg.Research.AllCardItem(this.app.layer, {
 			manager: this,
 			data: list[i]
 		});
@@ -221,6 +222,17 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
     		
     	}
     		
+    });
+    atom.declare( 'Wotg.Research.AllCardItem', Wotg.Research.CardItem, {
+
+	getPos: function() {
+		var columns = 10,
+		width = 100,
+		hight = 100,
+		x = this.slot % columns,
+		y= (this.slot-x) / columns;
+		return new Point (x*width,y*hight);
+	}
     });
 
     
