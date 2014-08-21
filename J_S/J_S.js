@@ -71,7 +71,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		
 		if (data.parenthq) {
 			var parenthq = this.model.getCardById(data.parenthq);
-			parenthq.slot=10;
+			parenthq.slot=0;
 			this.createHq(parenthq, false, false);
 		}
 		var elem = new Wotg.Research.HQItem(this.app.layer, {
@@ -159,8 +159,8 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 	}
     //========================================================   
     	,
-    	'bigHq': {10: new Point(0, 0)},
-    	'smallHq': {10: new Point(0, 0)},
+    	'bigCards': {0: new Point(0, 0)},
+    	'smallCards': {0: new Point(0, 0)},
     	'createBackButton': function method() {
     		method.previous.apply( this, arguments );
 
