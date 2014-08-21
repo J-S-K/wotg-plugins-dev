@@ -156,9 +156,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 	},
 	'JSsmallHq':{
 		0: new Point(0, 90)
-	}
-    //========================================================   
-    	,
+	},
     	'createBackButton': function method() {
     		method.previous.apply( this, arguments );
 
@@ -171,7 +169,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 				},
 				'tree-root'
 			);
-			jslog(this.allButton);
+			//jslog(this.allButton);
 			var targetNode = Wotg.controller().screens.headerNode;
 			this.allButton.element.css('position', 'absolute')
 				.css('left', 120 )
@@ -196,25 +194,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		if (screenOpenData.nation) this.defaultNation = screenOpenData.nation;
 
 		this.createNationNavigator();
-		/*
-		if (screenOpenData.nation) {
-			this.createRoot();
-		} else if (screenOpenData.hqId) {
-			this.defaultNation = Wotg.controller().protos.get(screenOpenData.hqId).country.toLowerCase();
-			this.createResearchTreeForHQ(screenOpenData.hqId);
-			this.currentHq = screenOpenData.hqId;
-		} else {
-			var deck = Wotg.controller().model.get('decks').current;
-			if (deck) {
-				this.defaultNation = deck.hqProto.country.toLowerCase();
-				this.createResearchTreeForHQ(deck.hqProto.id);
-				this.currentHq = deck.hqProto.id;
-			} else {
-				this.createRoot();
-			}
-		}
-		*/
-		jslog(this.model, this.defaultNation );
+//		jslog(this.model, this.defaultNation );
 		
 		var list = this.model.getTreeByNation(this.defaultNation );
 		list.sort (function(a,b) {
@@ -256,43 +236,6 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
     });
     
     plugin.refactor( 'Wotg.Research.HQItem', {
-        // Меняем один из методов класса
-        /*
-        'configure': function  method() {
-        	method.previous.call(this);
-
-		this.isCurrent = this.settings.get('isCurrent');
-		this.isRootTree = this.settings.get('isRootTree');
-		this.slot    = this.isRootTree ? this.data.hqSlot : this.data.slot;
-		this.shape   = new Rectangle(this.getPos(), this.getSize());
-		this.textShape   = new Rectangle(0, 0, this.shape.width, 20).moveTo(this.shape.from);
-
-		this.events.add( 'mouseup', function (e) {
-			if (this.isCurrent) {
-				Wotg.openPopup('ResearchHqSet', {
-					proto: this.proto,
-					manager: this.manager
-				});
-			} else {
-				//this.manager.currentHq = this.data.card;
-				//this.manager.createResearchTreeForHQ(this.data.card);
-				Wotg.openScreen('Research', { hqId : this.data.card });
-			}
-		}.bind(this));
-
-		if (!this.isCurrent) {
-			this.model = new Wotg.Card.Models.HqResearch(this.proto, this.data.exp);
-			this.view = new Wotg.Card.Views.TreeHqClosed(this.model);
-			this.view.events.add('redraw', this.redraw);
-		} else {
-			this.model = new Wotg.Card.Models.HqResearch(this.proto, this.data.exp);
-			this.view = new Wotg.Card.Views.HqBattle(this.model, this.redraw);
-			this.view.events.add('redraw', this.redraw);
-		}
-
-		this.setModelExp();
-        },
-        */
         'sizeCurrent': new Size(287, 168) //342,200 ----- 300,84
     });
     
