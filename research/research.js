@@ -142,10 +142,10 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		2: new Point(444, 0),//101
 		3: new Point(621, 0),
 		4: new Point(799, 0),
-		5: new Point(267, 120),
-		6: new Point(444, 120),
-		7: new Point(621, 120),
-		8: new Point(799, 120)
+		5: new Point(267, 125),
+		6: new Point(444, 125),
+		7: new Point(621, 125),
+		8: new Point(799, 125)
 		
 
 	},
@@ -161,16 +161,16 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		0: new Point(0, 0),
 		1: new Point(108, 80),
 		2: new Point(799, 80),
-		3: new Point(108, 255),
-		4: new Point(267, 255),
-		5: new Point(444, 255),
-		6: new Point(621, 255),
-		7: new Point(799, 255),
-		8: new Point(108, 403),
-		9: new Point(257, 403),
-		10: new Point(434, 403),
-		11: new Point(611, 403),
-		12: new Point(799, 403),
+		3: new Point(108, 260),
+		4: new Point(267, 260),
+		5: new Point(444, 260),
+		6: new Point(621, 260),
+		7: new Point(799, 260),
+		8: new Point(108, 410),
+		9: new Point(257, 410),
+		10: new Point(434, 410),
+		11: new Point(611, 410),
+		12: new Point(799, 410),
 		13: new Point(28, 555),
 		14: new Point(348, 555),
 		15: new Point(673, 555)
