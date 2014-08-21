@@ -150,7 +150,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 			this.allButton = Wotg.controller().ui.buttons.header.create({
 					onActivate: function(){
 						//function
-						jslog('boom');
+						Wotg.openScreen('Research', { nation : this.defaultNation, mode :all });;
 					}.bind(this)
 				},
 				'tree-root'
@@ -162,7 +162,20 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 				.css('top', 6 );
 			this.allButton.element.addClass("all-button").appendTo(targetNode);
 		}
+    	},
+    	'destroy': function method() {
+    		method.previous.apply( this, arguments );
+    		if (this.allButton) this.allButton.destroy();
+    	},
+    	'initialize': function method(node, viewMode, screenOpenData) {
+    		if (screenOpenData.mode) {
+    			jslog('boom');
+    		}
+    		method.previous.apply( this, arguments );
+    		
+    		
     	}
+    		
     });
 
     
