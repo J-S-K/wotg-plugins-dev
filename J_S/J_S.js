@@ -159,7 +159,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 			var targetNode = Wotg.controller().screens.headerNode;
 			this.allButton.element.css('position', 'asolute')
 				.css('left', 100 )
-				.css('top', 100 )
+				.css('top', 100 );
 			this.allButton.element.addClass("all-button").appendTo(targetNode);
 		}
     	}
