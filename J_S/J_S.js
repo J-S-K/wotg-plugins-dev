@@ -145,6 +145,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
     	,
     	'createBackButton': function method() {
     		method.previous.apply( this, arguments );
+    		var targetNode = Wotg.controller().screens.headerNode;
     		if (!this.isRoot) {
 			this.allButton = Wotg.controller().ui.buttons.header.create({
 					onActivate: function(){
