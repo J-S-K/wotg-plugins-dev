@@ -157,6 +157,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 			jslog(this.allButton);
 			this.allButton.element.addClass("all-button").appendTo(targetNode);
 		}
+    	}
     });
 
     
