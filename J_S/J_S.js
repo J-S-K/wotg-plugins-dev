@@ -201,7 +201,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		
 		var list = this.model.getTreeByNation(this.defaultNation );
 		list.sort (function(a,b) {
-			return Wotg.controller().protos.get(a.id).level > Wotg.controller().protos.get(b.id).level
+			return (Wotg.controller().protos.get(a.id).level - Wotg.controller().protos.get(b.id).level)
 		});
 		for (var i = 0 ; i < list.length; i++) { //list.length
 			list[i].slot = i;
