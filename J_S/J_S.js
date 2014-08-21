@@ -76,7 +76,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		this.app.mouseHandler.subscribe(elem);
 		this.elems.push(elem);
 		
-		for (var i = 0 ; i < 8; i++) { //list.length
+		for (var i = 0 ; i < list.length; i++) { 
 			list[i].slot = i+1;
 			this.createHqCard(list[i]);
 		}
@@ -199,7 +199,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		jslog(this.model, this.defaultNation );
 		
 		var list = this.model.getTreeByNation(this.defaultNation );
-		for (var i = 0 ; i < list.length; i++) {
+		for (var i = 0 ; i < 8; i++) { list.length
 			list[i].slot = i+1;
 		//	this.createHqCard(list[i]);
 			var elem = new Wotg.Research.HqCardItem(this.app.layer, {
