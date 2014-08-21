@@ -237,6 +237,41 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		return new Point (x*width,y*hight+40);
 	}
     });
+    
+    plugin.refactor( 'Wotg.Research.HQItem', {
+        // Меняем один из методов класса
+        'configure': function  method() {
+        	//method.previous.call(this);
 
+		this.isCurrent = this.settings.get('isCurrent');
+		this.isRootTree = this.settings.get('isRootTree');
+		this.slot    = this.isRootTree ? this.data.hqSlot : this.data.slot;
+		this.shape   = new Rectangle(this.getPos(), this.getSize());
+		this.textShape   = new Rectangle(0, 0, this.shape.width, 20).moveTo(this.shape.from);
+
+		this.events.add( 'mouseup', function (e) {
+			if (this.isCurrent) {
+				Wotg.openPopup('ResearchHqSet', {
+					proto: this.proto,
+					manager: this.manager
+				});
+			} else {
+				//this.manager.currentHq = this.data.card;
+				//this.manager.createResearchTreeForHQ(this.data.card);
+				Wotg.openScreen('Research', { hqId : this.data.card });
+			}
+		}.bind(this));
+
+		if (!this.isCurrent) {
+			this.model = new Wotg.Card.Models.HqResearch(this.proto, this.data.exp);
+			this.view = new Wotg.Card.Views.TreeHqClosed(this.model);
+			this.view.events.add('redraw', this.redraw);
+		} else {
+			this.model = new Wotg.Card.Models.HqResearch(this.proto, this.data.exp);
+			this.view = new Wotg.Hangar.HqView(this.model);
+			this.view.events.add('redraw', this.redraw);
+		}
+
+		this.setModelExp();
     
 });
