@@ -240,6 +240,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
     
     plugin.refactor( 'Wotg.Research.HQItem', {
         // Меняем один из методов класса
+        /*
         'configure': function  method() {
         	method.previous.call(this);
 
@@ -274,7 +275,8 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 
 		this.setModelExp();
         },
-        'sizeCurrent': new Size(252, 250)
+        */
+        'sizeCurrent': new Size(200, 200)
     });
     
 });
