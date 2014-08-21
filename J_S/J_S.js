@@ -150,7 +150,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 			this.allButton = Wotg.controller().ui.buttons.header.create({
 					onActivate: function(){
 						//function
-						Wotg.openScreen('Research', { nation : this.defaultNation, mode :all });;
+						Wotg.openScreen('Research', { nation : this.defaultNation, mode :'all' });;
 					}.bind(this)
 				},
 				'tree-root'
