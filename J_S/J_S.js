@@ -147,7 +147,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
     	'createBackButton': function method() {
     		method.previous.apply( this, arguments );
 
-    		if (!this.isRoot) {
+    		//if (!this.isRoot) {
 			this.allButton = Wotg.controller().ui.buttons.header.create({
 					onActivate: function(){
 						//function
@@ -162,7 +162,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 				.css('left', 120 )
 				.css('top', 6 );
 			this.allButton.element.addClass("all-button").appendTo(targetNode);
-		}
+		//}
     	},
     	'destroy': function method() {
     		method.previous.apply( this, arguments );
@@ -226,7 +226,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
     atom.declare( 'Wotg.Research.AllCardItem', Wotg.Research.CardItem, {
 
 	getPos: function() {
-		var columns = 12,
+		var columns = 13,
 		width = 125,
 		hight = 125,
 		x = this.slot % columns,
