@@ -159,8 +159,6 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 	}
     //========================================================   
     	,
-    	'bigCards': {0: new Point(0, 0)},
-    	'smallCards': {0: new Point(0, 0)},
     	'createBackButton': function method() {
     		method.previous.apply( this, arguments );
 
@@ -186,6 +184,8 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
     		if (this.allButton) this.allButton.destroy();
     	},
     	'initialize': function method(node, viewMode, screenOpenData) {
+    	   this.bigCards[0]= new Point(0, 0);
+    	   this.smallCards[0]= new Point(0, 0);
            if (screenOpenData.mode) {
     		this.setViewMode(viewMode);
 		this.node = node;
