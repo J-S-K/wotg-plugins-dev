@@ -200,7 +200,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		jslog(this.model, this.defaultNation );
 		
 		var list = this.model.getTreeByNation(this.defaultNation );
-		list.sort (function(a,b {
+		list.sort (function(a,b) {
 			return a.proto.level > b.proto.level
 		}))
 		for (var i = 0 ; i < list.length; i++) { //list.length
