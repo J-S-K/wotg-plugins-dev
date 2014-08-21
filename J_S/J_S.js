@@ -76,7 +76,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		this.app.mouseHandler.subscribe(elem);
 		this.elems.push(elem);
 		
-		for (var i = 0 ; i < list.length; i++) {
+		for (var i = 0 ; i < 8; i++) { //list.length
 			list[i].slot = i+1;
 			this.createHqCard(list[i]);
 		}
