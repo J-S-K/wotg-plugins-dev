@@ -226,9 +226,9 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
     atom.declare( 'Wotg.Research.AllCardItem', Wotg.Research.CardItem, {
 
 	getPos: function() {
-		var columns = 13,
-		width = 125,
-		hight = 125,
+		var columns = 12,
+		width = 127,
+		hight = 127,
 		x = this.slot % columns,
 		y= (this.slot-x) / columns;
 		return new Point (x*width,y*hight+40);
