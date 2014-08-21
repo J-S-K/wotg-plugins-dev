@@ -202,6 +202,12 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		for (var i = 0 ; i < list.length; i++) {
 			list[i].slot = i+1;
 		//	this.createHqCard(list[i]);
+			var elem = new Wotg.Research.HqCardItem(this.app.layer, {
+			manager: this,
+			data: list[5]
+		});
+		this.app.mouseHandler.subscribe(elem);
+		this.elems.push(elem);
 		}
 		
 		this.createBackButton();
