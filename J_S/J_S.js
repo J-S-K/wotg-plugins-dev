@@ -273,7 +273,8 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		}
 
 		this.setModelExp();
-        }
+        },
+        'sizeCurrent': new Size(342, 600),
     });
     
 });
