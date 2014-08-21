@@ -159,6 +159,8 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 	}
     //========================================================   
     	,
+    	'bigHq': {10: new Point(0, 0)},
+    	'smallHq': {10: new Point(0, 0)},
     	'createBackButton': function method() {
     		method.previous.apply( this, arguments );
 
