@@ -157,6 +157,24 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 	'JSsmallHq':{
 		0: new Point(0, 90)
 	},
+	'smallCards': {
+		0: new Point(0, 0),
+		1: new Point(108, 80),
+		2: new Point(799, 80),
+		3: new Point(108, 255),
+		4: new Point(267, 255),
+		5: new Point(444, 255),
+		6: new Point(621, 255),
+		7: new Point(799, 255),
+		8: new Point(108, 403),
+		9: new Point(257, 403),
+		10: new Point(434, 403),
+		11: new Point(611, 403),
+		12: new Point(799, 403),
+		13: new Point(28, 555),
+		14: new Point(348, 555),
+		15: new Point(673, 555)
+	},
     	'createBackButton': function method() {
     		method.previous.apply( this, arguments );
 
@@ -183,7 +201,6 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
     	},
     	'initialize': function method(node, viewMode, screenOpenData) {
     	   this.bigCards[0]= new Point(140, 0);
-    	   this.smallCards[0]= new Point(0, 0);
            if (screenOpenData.mode) {
     		this.setViewMode(viewMode);
 		this.node = node;
