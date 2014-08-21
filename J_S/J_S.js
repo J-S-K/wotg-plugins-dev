@@ -151,11 +151,11 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 	},
 	'JShqSlotsCoords' :{},
 	'JSbigHq' : {
-		0: new Point(150, 50)
+		0: new Point(150, 80)
 		
 	},
 	'JSsmallHq':{
-		0: new Point(0, 50)
+		0: new Point(0, 80)
 	}
     //========================================================   
     	,
@@ -184,7 +184,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
     		if (this.allButton) this.allButton.destroy();
     	},
     	'initialize': function method(node, viewMode, screenOpenData) {
-    	   this.bigCards[0]= new Point(0, 0);
+    	   this.bigCards[0]= new Point(150, 0);
     	   this.smallCards[0]= new Point(0, 0);
            if (screenOpenData.mode) {
     		this.setViewMode(viewMode);
