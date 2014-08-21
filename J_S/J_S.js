@@ -204,7 +204,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		//	this.createHqCard(list[i]);
 			var elem = new Wotg.Research.HqCardItem(this.app.layer, {
 			manager: this,
-			data: list[5]
+			data: list[i]
 		});
 		this.app.mouseHandler.subscribe(elem);
 		this.elems.push(elem);
