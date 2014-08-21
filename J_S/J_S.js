@@ -168,10 +168,41 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
     		if (this.allButton) this.allButton.destroy();
     	},
     	'initialize': function method(node, viewMode, screenOpenData) {
-    		if (screenOpenData.mode) {
-    			jslog('boom');
-    		}
-    		method.previous.apply( this, arguments );
+           if (screenOpenData.mode) {
+    		this.setViewMode(viewMode);
+		this.node = node;
+		this.elems = [];
+		this.createApp();
+		this.model = Wotg.controller().model.get('research');
+
+		if (screenOpenData.nation) this.defaultNation = screenOpenData.nation;
+
+		this.createNationNavigator();
+		/*
+		if (screenOpenData.nation) {
+			this.createRoot();
+		} else if (screenOpenData.hqId) {
+			this.defaultNation = Wotg.controller().protos.get(screenOpenData.hqId).country.toLowerCase();
+			this.createResearchTreeForHQ(screenOpenData.hqId);
+			this.currentHq = screenOpenData.hqId;
+		} else {
+			var deck = Wotg.controller().model.get('decks').current;
+			if (deck) {
+				this.defaultNation = deck.hqProto.country.toLowerCase();
+				this.createResearchTreeForHQ(deck.hqProto.id);
+				this.currentHq = deck.hqProto.id;
+			} else {
+				this.createRoot();
+			}
+		}
+		*/
+		this.createBackButton();
+
+		this.flagElem = atom.dom.create('div').addClass('big-nation').appendTo('body');
+		this.setBgFlag(this.defaultNation);
+    	   } else {
+    	   	method.previous.apply( this, arguments );
+    	   }
     		
     		
     	}
