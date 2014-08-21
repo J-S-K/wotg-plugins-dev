@@ -253,8 +253,8 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
     });
     
     plugin.refactor( 'Wotg.Research.HQItem', {
-    	'size'       : new Size(287, 84),
-        'sizeCurrent': new Size(287, 168) //342,200 ----- 300,84
+    	'size'       : new Size(285, 80),
+        'sizeCurrent': new Size(285, 160) //342,200 ----- 300,84
     });
     
 });
