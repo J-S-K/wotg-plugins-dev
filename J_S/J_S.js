@@ -268,10 +268,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 			this.view.events.add('redraw', this.redraw);
 		} else {
 			this.model = new Wotg.Card.Models.HqResearch(this.proto, this.data.exp);
-			this.view = new Wotg.Hangar.HqView(this.appData.layer, {
-				model: this.model
-				
-			});
+			this.view = new Wotg.Card.Views.HqBattle(this.model, this.redraw);
 			this.view.events.add('redraw', this.redraw);
 		}
 
