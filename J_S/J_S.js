@@ -102,6 +102,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 			}
 		}
 		setTimeout(function(){
+			jslog(this.elems);
 			var lines = new Wotg.Research.Lines(this.app.linesLayer.ctx, this.elems, this);
 			lines.drawLines(false);
 		}.bind(this), 50);
