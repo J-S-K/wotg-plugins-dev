@@ -177,8 +177,8 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 	},
     	'createBackButton': function method() {
     		method.previous.apply( this, arguments );
-
-    		if (plugin.getConfig('showAll').toLowCase == 'true' && this.viewMode != 'compact') {
+		var showAll = plugin.getConfig('showAll');
+    		if (showAll && showAll.toLowCase == 'true' && this.viewMode != 'compact') {
 			this.allButton = Wotg.controller().ui.buttons.header.create({
 					onActivate: function(){
 						//function
