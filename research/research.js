@@ -46,6 +46,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
         // Меняем один из методов класса
         'setViewMode': function method(viewMode) {
         	method.previous.apply( this, arguments );
+        	this.viewMode = viewMode;
         if (viewMode == 'compact') {
 			this.JShqSlotsCoords = this.JSsmallHq;
 			this.HQcardSlotsCoords = this.HQsmallCards;
