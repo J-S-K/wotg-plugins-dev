@@ -39,7 +39,7 @@ function jslog(text) {
 		this.manager.allButton = this.allButton = Wotg.controller().ui.buttons.header.create({
 					onActivate: function(){
 						//function
-						Wotg.openScreen('DeckEditor', { deck: this.openData.currentDeck, hq: this.openData.hq, mode :'all' });
+						Wotg.openScreen('DeckEditor', { deck: this.openData.deck, hq: this.openData.hq, mode :'all' });
 					}.bind(this)
 				},
 				'tree-root'
