@@ -64,10 +64,11 @@ function jslog(text) {
     		if (this.allButton) this.allButton.destroy();
 	}
 	});
+	/*
 	plugin.refactor( 'Wotg.DeckEditor.Controller', {
         // Меняем один из методов класса
         'initDeck': function method(deck, hq) {
-        	
+        */	
 
 	
 
