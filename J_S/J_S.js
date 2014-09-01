@@ -56,8 +56,12 @@ function jslog(text) {
 		
 		//==
 		jslog(this.openData);
-		this.manager.initDeck(this.openData.deck, this.openData.hq);
-		this.manager.resize(this.currentViewMode);
+		if (!this.openData.mode) {
+			this.manager.initDeck(this.openData.deck, this.openData.hq);
+			this.manager.resize(this.currentViewMode);
+		} else {
+			jslog('allMode');
+		}
     	},
     	'onClose': function method() {
     		method.previous.apply( this, arguments );
