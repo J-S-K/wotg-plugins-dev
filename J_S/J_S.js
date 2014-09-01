@@ -51,7 +51,7 @@ function jslog(text) {
 			.css('left', 120 )
 			.css('top', 6 );
 		*/
-		Wotg.controller().screens.header.addElement(this.allButton, "all-button", "left", false);
+		Wotg.controller().screens.header.addElement(this.allButton, "allButton", "left", false);
 		
 		
 		//==
