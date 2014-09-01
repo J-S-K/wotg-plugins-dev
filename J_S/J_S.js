@@ -44,7 +44,8 @@ function jslog(text) {
 				},
 				'tree-root'
 			);
-		//jslog(this.allButton);
+		jslog(this.allButton);
+		jslog(this);
 		/*
 		this.allButton.element.css('position', 'absolute')
 			.css('left', 120 )
