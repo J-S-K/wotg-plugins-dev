@@ -46,11 +46,11 @@ function jslog(text) {
 			);
 		jslog(this.allButton);
 		jslog(this);
-		
+		/*
 		this.allButton.element.css('position', 'absolute')
 			.css('left', 120 )
 			.css('top', 6 );
-		
+		*/
 		Wotg.controller().screens.header.addElement(this.allButton, "allButton", "left", false);
 		
 		
