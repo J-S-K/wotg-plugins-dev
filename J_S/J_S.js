@@ -39,7 +39,7 @@ function jslog(text) {
 		this.manager.allButton = this.allButton = Wotg.controller().ui.buttons.header.create({
 					onActivate: function(){
 						//function
-						Wotg.openScreen('Research', { nation : this.defaultNation, mode :'all' });;
+						Wotg.openScreen('DeckEditor', { deck: this.currentDeck, hq: this.currentHq, mode :'all' });
 					}.bind(this)
 				},
 				'tree-root'
@@ -55,6 +55,7 @@ function jslog(text) {
 		
 		
 		//==
+		jslog(this.openData);
 		this.manager.initDeck(this.openData.deck, this.openData.hq);
 		this.manager.resize(this.currentViewMode);
     	},
@@ -63,6 +64,10 @@ function jslog(text) {
     		if (this.allButton) this.allButton.destroy();
 	}
 	});
+	plugin.refactor( 'Wotg.DeckEditor.Controller', {
+        // Меняем один из методов класса
+        'initDeck': function method(deck, hq) {
+        	
 
 	
 
