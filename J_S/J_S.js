@@ -60,7 +60,7 @@ function jslog(text) {
     	'onClose': function method() {
     		method.previous.apply( this, arguments );
     		if (this.allButton) this.allButton.destroy();
-	};
+	}
 	});
 
 	
