@@ -113,7 +113,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 			from:  new Point(100, 200)
 		});
 		//imgNode.setZIndex(zIdx);
-		imgNode.setComponent(component);
+		//imgNode.setComponent(component);
 		//=====
 		this.createHqHq(rootData, listHq);
 		for (var i = 0 ; i < list.length; i++) {
