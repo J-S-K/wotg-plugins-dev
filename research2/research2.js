@@ -130,9 +130,11 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 			jslog(this.elems);
 			var linesElems =[];
 			for (var i = 0 ; i < this.elems.length; i++) {
+				/*
 				if (this.elems[i].Constructor == "Wotg.Research.HqCardItem") {
 					this.elems[i].data.children=[this.elems[0].data.card];
 				}
+				*/
 				linesElems.push(this.elems[i]);
 			}
 			
@@ -280,6 +282,24 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
     plugin.refactor( 'Wotg.Research.HQItem', {
     	'size'       : new Size(285, 80), // непонятно работает ли
         'sizeCurrent': new Size(285, 160) //342,200 ----- 300,84 //размер штаба
+    });
+    plugin.refactor( 'Wotg.Research.Lines', {
+	drawLine: function(from, to) {
+		var rect = new Rectangle(from,to);
+		if (from.y < to.y) {
+			rect = new Rectangle(new Point(from.x - 2, from.y + 2), new Size(5, to.y - from.y - 2));
+		} else if (from.x < to.x) {
+			rect = new Rectangle(from, new Size(to.x - from.x, 5));
+
+		} else if (from.x > to.x) {
+			rect = new Rectangle(to, new Size(from.x - to.x, 5));
+		}
+		var pattern = this.createPattern(new Size(rect.width, rect.height));
+		this.ctx.drawImage({
+			image: pattern,
+			draw : rect
+		});
+	}
     });
     
 });
