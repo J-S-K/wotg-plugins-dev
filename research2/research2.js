@@ -124,6 +124,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 
         },
         'cardSlotsCoords': {},
+        //карты около штаба
         'HQbigCards': {
 		0: new Point(240, 0),
 		1: new Point(484, 0), 
@@ -137,6 +138,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		
 
 	},
+	//карты около штаба compact
 	'HQsmallCards': {
 		0: new Point(108, 0),
 		1: new Point(267, 0), 
@@ -151,15 +153,18 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 
 	},
 	'JShqSlotsCoords' :{},
+	//координаты штаба
 	'JSbigHq' : {
 		0: new Point(150, 90)
 		
 	},
+	//координаты штаба compact
 	'JSsmallHq':{
-		0: new Point(0, 90)
+		0: new Point(380, 125)
 	},
+	//прокачиваемые карты  compact
 	'smallCards': {
-		0: new Point(0, 0),
+		0: new Point(380, 0), // координата предыдущего штаба
 		1: new Point(108, 80),
 		2: new Point(799, 80),
 		3: new Point(108, 265),
@@ -254,8 +259,8 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
     });
     
     plugin.refactor( 'Wotg.Research.HQItem', {
-    	'size'       : new Size(285, 80),
-        'sizeCurrent': new Size(285, 160) //342,200 ----- 300,84
+    	'size'       : new Size(285, 80), // непонятно работает ли
+        'sizeCurrent': new Size(285, 160) //342,200 ----- 300,84 //размер штаба
     });
     
 });
