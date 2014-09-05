@@ -140,14 +140,14 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 	},
 	//карты около штаба compact
 	'HQsmallCards': {
-		0: new Point(108, 0), // пусто
-		1: new Point(444, 125), //2-2
+		0: new Point(0, 0), // пусто
+		1: new Point(108, 125), //2-2
 		2: new Point(621, 125),//2-3
-		3: new Point(267, 125),//2-1
+		3: new Point(0, 125),//2-1
 		4: new Point(799, 125),//2-4
-		5: new Point(444, 0),
+		5: new Point(108, 0),
 		6: new Point(621, 0),
-		7: new Point(267, 0),
+		7: new Point(0, 0),
 		8: new Point(799, 0)
 		
 
