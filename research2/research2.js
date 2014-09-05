@@ -90,10 +90,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		this.app.mouseHandler.subscribe(elem);
 		this.elems.push(elem);
 		
-		for (var i = 0 ; i < list.length; i++) { 
-			list[i].slot = i+1;
-			this.createHqCard(list[i]);
-		}
+
 		
 		
 	},
@@ -126,6 +123,14 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 				this.createHq(list[i], false, false);
 			}
 		}
+		for (var i = 0 ; i < list.length; i++) { 
+			list[i].slot = list[i].slot+15;
+			if (list[i].slot > 23) {
+				jslog('слишком большой слот:',list[i])
+				list[i].slot = 0;
+			}
+			this.createCard(list[i]);
+		}
 		setTimeout(function(){
 			jslog(this.elems);
 			var linesElems =[];
@@ -146,30 +151,16 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
         },
         'cardSlotsCoords': {},
         //карты около штаба
-        'HQbigCards': {
-		0: new Point(240, 0),
-		1: new Point(484, 0), 
-		2: new Point(728, 0),//101
-		3: new Point(972, 0),
-		4: new Point(1217, 0),
-		5: new Point(484, 140),
-		6: new Point(728, 140),
-		7: new Point(972, 140),
-		8: new Point(1217, 140)
+        'bigCards': {
 		
-
-	},
-	//карты около штаба compact
-	'HQsmallCards': {
-		0: new Point(0, 0), // пусто
-		1: new Point(175, 125), //2-2
-		2: new Point(715, 125),//2-3
-		3: new Point(0, 125),//2-1
-		4: new Point(875, 125),//2-4
-		5: new Point(175, 0),
-		6: new Point(715, 0),
-		7: new Point(0, 0),
-		8: new Point(875, 0)
+		16: new Point(484, 0), 
+		17: new Point(728, 0),//101
+		18: new Point(972, 0),
+		19: new Point(1217, 0),
+		20: new Point(484, 140),
+		21: new Point(728, 140),
+		22: new Point(972, 140),
+		23: new Point(1217, 140)
 		
 
 	},
@@ -200,7 +191,16 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		12: new Point(875, 410),
 		13: new Point(28, 555),
 		14: new Point(348, 555),
-		15: new Point(673, 555)
+		15: new Point(673, 555),
+		
+		16: new Point(175, 125), //2-2
+		17: new Point(715, 125),//2-3
+		18: new Point(0, 125),//2-1
+		19: new Point(875, 125),//2-4
+		20: new Point(175, 0),
+		21: new Point(715, 0),
+		22: new Point(0, 0),
+		23: new Point(875, 0)
 	},
     	'createBackButton': function method() {
     		method.previous.apply( this, arguments );
