@@ -141,14 +141,14 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 	//карты около штаба compact
 	'HQsmallCards': {
 		0: new Point(0, 0), // пусто
-		1: new Point(108, 125), //2-2
-		2: new Point(621, 125),//2-3
+		1: new Point(125, 125), //2-2
+		2: new Point(765, 125),//2-3
 		3: new Point(0, 125),//2-1
-		4: new Point(799, 125),//2-4
-		5: new Point(108, 0),
-		6: new Point(621, 0),
+		4: new Point(875, 125),//2-4
+		5: new Point(125, 0),
+		6: new Point(765, 0),
 		7: new Point(0, 0),
-		8: new Point(799, 0)
+		8: new Point(875, 0)
 		
 
 	},
@@ -165,18 +165,18 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 	//прокачиваемые карты  compact
 	'smallCards': {
 		0: new Point(370, 0), // координата предыдущего штаба
-		1: new Point(108, 80),
-		2: new Point(799, 80),
-		3: new Point(108, 265),
+		1: new Point(125, 80),
+		2: new Point(875, 80),
+		3: new Point(125, 265),
 		4: new Point(267, 265),
 		5: new Point(444, 265),
-		6: new Point(621, 265),
-		7: new Point(799, 265),
-		8: new Point(108, 410),
+		6: new Point(765, 265),
+		7: new Point(875, 265),
+		8: new Point(125, 410),
 		9: new Point(257, 410),
 		10: new Point(434, 410),
 		11: new Point(611, 410),
-		12: new Point(799, 410),
+		12: new Point(875, 410),
 		13: new Point(28, 555),
 		14: new Point(348, 555),
 		15: new Point(673, 555)
