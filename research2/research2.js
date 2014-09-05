@@ -130,9 +130,10 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 			jslog(this.elems);
 			var linesElems =[];
 			for (var i = 0 ; i < this.elems.length; i++) {
-				if (this.elems[i].Constructor != "Wotg.Research.HqCardItem") {
-					linesElems.push(this.elems[i]);
+				if (this.elems[i].Constructor == "Wotg.Research.HqCardItem") {
+					this.elems[i].data.children=[this.elems[0].data.card];
 				}
+				linesElems.push(this.elems[i]);
 			}
 			
 		
