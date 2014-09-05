@@ -55,10 +55,10 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
         	this.viewMode = viewMode;
         if (viewMode == 'compact') {
 			this.JShqSlotsCoords = this.JSsmallHq;
-			this.HQcardSlotsCoords = this.HQsmallCards;
+		//	this.HQcardSlotsCoords = this.HQsmallCards;
 		} else {
 			this.JShqSlotsCoords = this.JSbigHq;
-			this.HQcardSlotsCoords = this.HQbigCards;
+		//	this.HQcardSlotsCoords = this.HQbigCards;
 		}
 	}
 	});
@@ -66,14 +66,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
         	
 	plugin.refactor( 'Wotg.Research.Manager', {
         // Меняем один из методов класса
-        'createHqCard': function  (data) {
-		var elem = new Wotg.Research.HqCardItem(this.app.layer, {
-			manager: this,
-			data: data
-		});
-		this.app.mouseHandler.subscribe(elem);
-		this.elems.push(elem);
-	},
+
 	'createHqHq': function  (data, list) {
 		
 		if (data.parenthq) {
@@ -89,10 +82,6 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		});
 		this.app.mouseHandler.subscribe(elem);
 		this.elems.push(elem);
-		
-
-		
-		
 	},
         'createResearchTreeForHQ': function method(hqId) {
            	//this.backButton.text = Wotg.controller().lang.get('research.backToRoot');
