@@ -123,6 +123,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 				this.createHq(list[i], false, false);
 			}
 		}
+		list =listHq;
 		for (var i = 0 ; i < list.length; i++) { 
 			list[i].slot = list[i].slot+15;
 			if (list[i].slot > 23) {
