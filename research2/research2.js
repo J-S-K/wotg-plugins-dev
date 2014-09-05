@@ -36,7 +36,14 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 	plugin.refactor( 'Wotg.Research.HQItem', {
         // Меняем один из методов класса
         'getPos': function method() {
-        	if (this.isCurrent) return this.manager.JShqSlotsCoords[0];
+        	if (this.isCurrent) {
+        		if (this.data.parents.length == 0) {
+        			var coords = this.manager.JShqSlotsCoords[0];
+        			coords.y=0
+        			return coords;
+        		} else	return this.manager.JShqSlotsCoords[0];
+        		return this.manager.JShqSlotsCoords[0];
+        	}
 		if (this.isRootTree) return this.manager.hqSlotsCoords[this.slot];
 		return this.manager.cardSlotsCoords[this.slot];
 	}
