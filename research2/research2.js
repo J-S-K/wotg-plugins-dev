@@ -111,7 +111,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		var component = new Wotg.UI.ImageComponent(this.app.layer, {
 			image:  Wotg.controller().images.get('popup-bg'),
 			from:  new Point(0, 0),
-			shape: new Rectangle (0, 0,1000,500))
+			shape: new Rectangle (0, 0,1000,500)
 		});
 		//imgNode.setZIndex(zIdx);
 		//imgNode.setComponent(component);
