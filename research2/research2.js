@@ -37,11 +37,9 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
         // Меняем один из методов класса
         'getPos': function method() {
         	if (this.isCurrent) {
-        		jslog(this);
+        		jslog(this,this.data.parents.length );
         		if (this.data.parents.length == 0) {
-        			var coords = this.manager.JShqSlotsCoords[0];
-        			coords.y=0
-        			return coords;
+        			return new Point(this.manager.JShqSlotsCoords[0].x,0);
         		} else	return this.manager.JShqSlotsCoords[0];
         		return this.manager.JShqSlotsCoords[0];
         	}
