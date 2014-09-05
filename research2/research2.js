@@ -106,6 +106,15 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		var listHq = this.model.getCardListForHQ(hqId, true);
 		var rootData = this.model.getCardById(hqId);
 		jslog({list:list, rootData:rootData, listHq:listHq, this:this});
+		//нарисовать подложку тут
+		var imgNode = this.node
+		var component = new Wotg.UI.ImageComponent(this.app.layer, {
+			image:  Wotg.controller().images.get('popup-bg'),
+			from:  new Point(100, 200)
+		});
+		//imgNode.setZIndex(zIdx);
+		imgNode.setComponent(component);
+		//=====
 		this.createHqHq(rootData, listHq);
 		for (var i = 0 ; i < list.length; i++) {
 			if (Wotg.controller().protos.get(list[i].card).type.toLowerCase() != 'hq') {
