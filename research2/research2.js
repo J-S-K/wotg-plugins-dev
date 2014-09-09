@@ -140,7 +140,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 			
 		
 			var lines = new Wotg.Research.Lines(this.app.linesLayer.ctx, linesElems, this);
-			//lines.drawLines(false);
+			lines.drawLines(false);
 		}.bind(this), 50);
 
         },
