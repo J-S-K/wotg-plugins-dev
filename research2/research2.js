@@ -137,29 +137,29 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
         //карты около штаба
         'bigCards': {
 		0: new Point(641, 52),
-		1: new Point(240, 101),
+		1: new Point(238, 101),
 		2: new Point(1217, 101),
-		3: new Point(240, 300),
+		3: new Point(238, 300),
 		4: new Point(484, 300),
 		5: new Point(728, 300),
 		6: new Point(972, 300),
 		7: new Point(1217, 300),
-		8: new Point(240, 500),
+		8: new Point(238, 500),
 		9: new Point(484, 500),
 		10: new Point(728, 500),
 		11: new Point(972, 500),
 		12: new Point(1217, 500),
 		13: new Point(159, 779),
-		14: new Point(648, 779),
+		14: new Point(650, 779),
 		15: new Point(1139, 779),
 		
 		16: new Point(484, 0), 
-		17: new Point(1139, 0),//101
-		18: new Point(240, 0),
+		17: new Point(1217, 0),//101
+		18: new Point(238, 0),
 		19: new Point(972, 0),
 		20: new Point(484, 140),
-		21: new Point(1139, 140),
-		22: new Point(240, 140),
+		21: new Point(1217, 140),
+		22: new Point(238, 140),
 		23: new Point(972, 140)
 		
 
@@ -167,7 +167,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 	'JShqSlotsCoords' :{},
 	//координаты штаба
 	'JSbigHq' : {
-		0: new Point(641, 125)
+		0: new Point(660, 125)
 		
 	},
 	//координаты штаба compact
