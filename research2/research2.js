@@ -136,7 +136,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
         'cardSlotsCoords': {},
         //карты около штаба
         'bigCards': {
-		0: new Point(641, 52),
+		0: new Point(650, 0),
 		1: new Point(237, 101),
 		2: new Point(1217, 101),
 		3: new Point(237, 300),
