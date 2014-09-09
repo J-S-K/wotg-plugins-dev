@@ -227,7 +227,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
     		if (this.allButton) this.allButton.destroy();
     	},
     	'initialize': function method(node, viewMode, screenOpenData) {
-    	   this.bigCards[0]= new Point(140, 0);
+    	   
            if (screenOpenData.mode) {
     		this.setViewMode(viewMode);
 		this.node = node;
