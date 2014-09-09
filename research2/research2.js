@@ -167,7 +167,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 	'JShqSlotsCoords' :{},
 	//координаты штаба
 	'JSbigHq' : {
-		0: new Point(690, 125)
+		0: new Point(690, 140)
 		
 	},
 	//координаты штаба compact
