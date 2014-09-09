@@ -67,15 +67,15 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 	plugin.refactor( 'Wotg.Research.Manager', {
         // Меняем один из методов класса
 
-	'createHqHq': function  (data, list) {
+	'createHqHq': function  (data) {
 		
-		/*
+		
 		if (data.parenthq) {
 			var parenthq = this.model.getCardById(data.parenthq);
 			parenthq.slot=0;
 			this.createHq(parenthq, false, false);
 		}
-		*/
+		
 		var elem = new Wotg.Research.HQItem(this.app.layer, {
 			manager: this,
 			data: data,
@@ -106,13 +106,13 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		//imgNode.setComponent(component);
 		*/
 		//=====
-		this.createHqHq(rootData, listHq);
+		this.createHqHq(rootData);
 		
 		for (var i = 0 ; i < list.length; i++) {
 			if (Wotg.controller().protos.get(list[i].card).type.toLowerCase() != 'hq') {
 				this.createCard(list[i]);
 			} else {
-				// this.createHq(list[i], false, false);
+				this.createHq(list[i], false, false);
 			}
 		}
 		return;
@@ -147,6 +147,22 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
         'cardSlotsCoords': {},
         //карты около штаба
         'bigCards': {
+		0: new Point(641, 52),
+		1: new Point(240, 101),
+		2: new Point(1217, 101),
+		3: new Point(240, 300),
+		4: new Point(484, 300),
+		5: new Point(728, 300),
+		6: new Point(972, 300),
+		7: new Point(1217, 300),
+		8: new Point(240, 500),
+		9: new Point(484, 500),
+		10: new Point(728, 500),
+		11: new Point(972, 500),
+		12: new Point(1217, 500),
+		13: new Point(159, 679),
+		14: new Point(648, 679),
+		15: new Point(1139, 679),
 		
 		16: new Point(484, 0), 
 		17: new Point(728, 0),//101
