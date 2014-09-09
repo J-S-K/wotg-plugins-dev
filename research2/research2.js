@@ -153,21 +153,21 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		14: new Point(648, 779),
 		15: new Point(1139, 779),
 		
-		16: new Point(240, 0), 
+		16: new Point(484, 0), 
 		17: new Point(1139, 0),//101
-		18: new Point(159, 0),
-		19: new Point(1217, 0),
-		20: new Point(240, 140),
+		18: new Point(240, 0),
+		19: new Point(972, 0),
+		20: new Point(484, 140),
 		21: new Point(1139, 140),
-		22: new Point(159, 140),
-		23: new Point(1217, 140)
+		22: new Point(240, 140),
+		23: new Point(972, 140)
 		
 
 	},
 	'JShqSlotsCoords' :{},
 	//координаты штаба
 	'JSbigHq' : {
-		0: new Point(375, 125)
+		0: new Point(641, 125)
 		
 	},
 	//координаты штаба compact
