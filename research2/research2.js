@@ -178,29 +178,29 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 	'smallCards': {
 		0: new Point(370, 0), // координата предыдущего штаба
 		1: new Point(77, 80),
-		2: new Point(875, 80),
+		2: new Point(850, 80),
 		3: new Point(77, 265),
 		4: new Point(225, 265),
 		5: new Point(424, 265),
-		6: new Point(590, 265),
-		7: new Point(875, 265),
+		6: new Point(620, 265),
+		7: new Point(850, 265),
 		8: new Point(77, 410),
 		9: new Point(225, 410),
 		10: new Point(424, 410),
 		11: new Point(611, 410),
-		12: new Point(875, 410),
+		12: new Point(850, 410),
 		13: new Point(0, 555),
 		14: new Point(348, 555),
-		15: new Point(773+28, 555),
+		15: new Point(773, 555),
 		
 		16: new Point(225, 125), //2-2
-		17: new Point(590, 125),//2-3
+		17: new Point(620, 125),//2-3
 		18: new Point(77, 125),//2-1
-		19: new Point(875, 125),//2-4
+		19: new Point(850, 125),//2-4
 		20: new Point(225, 1),
-		21: new Point(590, 1),
+		21: new Point(620, 1),
 		22: new Point(77, 1),
-		23: new Point(875, 1)
+		23: new Point(850, 1)
 	},
     	'createBackButton': function method() {
     		method.previous.apply( this, arguments );
