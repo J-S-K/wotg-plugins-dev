@@ -128,19 +128,8 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		
 		setTimeout(function(){
 			jslog(this.elems);
-			var linesElems =[];
-			for (var i = 0 ; i < this.elems.length; i++) {
-				/*
-				if (this.elems[i].Constructor == "Wotg.Research.HqCardItem") {
-					this.elems[i].data.children=[this.elems[0].data.card];
-				}
-				*/
-				linesElems.push(this.elems[i]);
-			}
-			
-		
-			var lines = new Wotg.Research.Lines(this.app.linesLayer.ctx, linesElems, this);
-			lines.drawLines(false);
+			var lines = new Wotg.Research.Lines(this.app.linesLayer.ctx, this.elems, this);
+			lines.drawLines(true);
 		}.bind(this), 50);
 
         },
