@@ -121,6 +121,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 			}
 			this.createCard(list[i]);
 		}
+		
 		setTimeout(function(){
 			jslog(this.elems);
 			var linesElems =[];
@@ -135,7 +136,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 			
 		
 			var lines = new Wotg.Research.Lines(this.app.linesLayer.ctx, linesElems, this);
-			lines.drawLines(false);
+			//lines.drawLines(false);
 		}.bind(this), 50);
 
         },
