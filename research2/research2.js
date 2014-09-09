@@ -172,11 +172,11 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 	},
 	//координаты штаба compact
 	'JSsmallHq':{
-		0: new Point(375, 95)
+		0: new Point(375, 125)
 	},
 	//прокачиваемые карты  compact
 	'smallCards': {
-		0: new Point(370, 0), // координата предыдущего штаба
+		0: new Point(348, 0), // координата предыдущего штаба
 		1: new Point(77, 80),
 		2: new Point(850, 80),
 		3: new Point(77, 265),
