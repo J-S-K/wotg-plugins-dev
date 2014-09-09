@@ -189,9 +189,9 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		10: new Point(434, 410),
 		11: new Point(611, 410),
 		12: new Point(875, 410),
-		13: new Point(28, 555),
+		13: new Point(0, 555),
 		14: new Point(348, 555),
-		15: new Point(673, 555),
+		15: new Point(673+28, 555),
 		
 		16: new Point(175, 125), //2-2
 		17: new Point(715, 125),//2-3
