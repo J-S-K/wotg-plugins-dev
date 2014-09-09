@@ -197,10 +197,10 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		17: new Point(715, 125),//2-3
 		18: new Point(0, 125),//2-1
 		19: new Point(875, 125),//2-4
-		20: new Point(175, 0),
-		21: new Point(715, 0),
-		22: new Point(0, 0),
-		23: new Point(875, 0)
+		20: new Point(175, 1),
+		21: new Point(715, 1),
+		22: new Point(0, 1),
+		23: new Point(875, 1)
 	},
     	'createBackButton': function method() {
     		method.previous.apply( this, arguments );
@@ -281,7 +281,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
     
     plugin.refactor( 'Wotg.Research.HQItem', {
     	'size'       : new Size(285, 80), // непонятно работает ли
-        'sizeCurrent': new Size(215, 134) //342,200 ----- 300,84 //размер штаба
+        'sizeCurrent': new Size(215, 131) //342,200 ----- 300,84 //размер штаба
     });
     plugin.refactor( 'Wotg.Research.Lines', {
 	drawLine: function(from, to) {
