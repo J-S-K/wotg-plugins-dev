@@ -149,9 +149,9 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		10: new Point(728, 500),
 		11: new Point(972, 500),
 		12: new Point(1217, 500),
-		13: new Point(159, 679),
-		14: new Point(648, 679),
-		15: new Point(1139, 679),
+		13: new Point(159, 779),
+		14: new Point(648, 779),
+		15: new Point(1139, 779),
 		
 		16: new Point(484, 0), 
 		17: new Point(728, 0),//101
@@ -177,29 +177,29 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 	//прокачиваемые карты  compact
 	'smallCards': {
 		0: new Point(370, 0), // координата предыдущего штаба
-		1: new Point(67, 80),
+		1: new Point(77, 80),
 		2: new Point(875, 80),
-		3: new Point(67, 265),
-		4: new Point(267, 265),
+		3: new Point(77, 265),
+		4: new Point(277, 265),
 		5: new Point(434, 265),
 		6: new Point(715, 265),
 		7: new Point(875, 265),
-		8: new Point(67, 410),
+		8: new Point(77, 410),
 		9: new Point(257, 410),
 		10: new Point(434, 410),
 		11: new Point(611, 410),
 		12: new Point(875, 410),
 		13: new Point(0, 555),
 		14: new Point(348, 555),
-		15: new Point(673+28, 555),
+		15: new Point(773+28, 555),
 		
 		16: new Point(175, 125), //2-2
 		17: new Point(715, 125),//2-3
-		18: new Point(67, 125),//2-1
+		18: new Point(77, 125),//2-1
 		19: new Point(875, 125),//2-4
 		20: new Point(175, 1),
 		21: new Point(715, 1),
-		22: new Point(67, 1),
+		22: new Point(77, 1),
 		23: new Point(875, 1)
 	},
     	'createBackButton': function method() {
