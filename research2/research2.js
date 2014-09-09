@@ -281,7 +281,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
     
     plugin.refactor( 'Wotg.Research.HQItem', {
     	'size'       : new Size(285, 80), // непонятно работает ли
-        'sizeCurrent': new Size(215, 130) //342,200 ----- 300,84 //размер штаба
+        'sizeCurrent': new Size(215, 132) //342,200 ----- 300,84 //размер штаба
     });
     plugin.refactor( 'Wotg.Research.Lines', {
 	drawLine: function(from, to) {
