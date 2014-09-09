@@ -118,7 +118,7 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		
 		list =listHq;
 		for (var i = 0 ; i < list.length; i++) { 
-			list[i].slot = list[i].slot+15;
+			if (list[i].slot<16)	list[i].slot = list[i].slot+15;
 			if (list[i].slot > 23) {
 				jslog('слишком большой слот:',list[i])
 				list[i].slot = 0;
