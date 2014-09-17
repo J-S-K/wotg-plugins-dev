@@ -24,13 +24,19 @@ function jslog(text) {
 	console.log('J_S afterLaunch');
 	
 	});
-	//========
-atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 
-	getPos: function() {
-		return this.manager.HQcardSlotsCoords[this.slot];
+	//========
+	plugin.refactor( 'Wotg.Research.CardItem', {
+        // Меняем один из методов класса
+        'getPos': function method() {
+        	if (this.slot > 23) {
+			jslog('слишком большой слот:',this)
+			return this.manager.cardSlotsCoords[this.slot-15]
+		}
+		if (this.isHqCard) return this.manager.cardSlotsCoords[this.slot+15]
+		else         	   return this.manager.cardSlotsCoords[this.slot];
 	}
-});
+	});
 
 	//удалить если будут меняться координаты штаба 
 	plugin.refactor( 'Wotg.Research.HQItem', {
@@ -109,10 +115,12 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		this.createHqHq(rootData);
 		
 		for (var i = 0 ; i < list.length; i++) {
+			/*
 			if (list[i].slot > 23) {
 				jslog('слишком большой слот:',list[i])
 				list[i].slot = list[i].slot-15;
 			}
+			*/
 			if (Wotg.controller().protos.get(list[i].card).type.toLowerCase() != 'hq') {
 
 				this.createCard(list[i]);
@@ -123,11 +131,14 @@ atom.declare( 'Wotg.Research.HqCardItem', Wotg.Research.CardItem, {
 		
 		list =listHq;
 		for (var i = 0 ; i < list.length; i++) { 
+			list[i].isHqCard = true;
+			/*
 			if (list[i].slot<16)	list[i].slot = list[i].slot+15;
 			if (list[i].slot > 23) {
 				jslog('слишком большой слот:',list[i])
 				list[i].slot = list[i].slot-15;
 			}
+			*/
 			this.createCard(list[i]);
 		}
 		
