@@ -8,6 +8,7 @@ new Wotg.Plugins.Simple({
 	});
 */
 jslog(plugin);
+plugin.Name = 'Альтернативное Исследование';
 plugin.pluginVersion = '0.1.0';
 plugin.info = 'Стабильная версия';
 plugin.url = 'http://forum.worldoftanks.ru/index.php?/forum/483-моды-скины-плагины/';
@@ -36,13 +37,18 @@ function jslog(text) {
         	jslog(this, plugin.pluginVersion);
         	var previousVersion = plugin.getConfig('ver');
         	if (plugin.pluginVersion != previousVersion) {
-        		var text = 'Плагин ' + plugin.Name + 'обновлен до версии ' + plugin.pluginVersio + 
-        		    plugin.info +
-        		    (plugin.url ? 'Подробности на форуме:' + plugin.url : '');
+        		var text = 'Плагин ' + plugin.Name + 'обновлен до версии ' + plugin.pluginVersion + 
+        		    plugin.info;
         		this.notifications.add({
 				type: 'info',
 				text: text
 			});
+			if(plugin.url) 
+				this.notifications.add({
+					type: 'info',
+					text: 'Подробности на форуме:' + plugin.url);
+			});
+			
         	}
 
 	
