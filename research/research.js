@@ -57,7 +57,7 @@ function jslog(text) {
         		
         	}
         	if (this.data.isParent) {
-			return this.manager.cardSlotsCoords[this.slot+15];
+			return this.manager.cardSlotsCoords[0];
         	}
 		return this.manager.cardSlotsCoords[this.slot];
 	}
