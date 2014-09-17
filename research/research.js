@@ -37,10 +37,11 @@ function jslog(text) {
         	var previousVersion = plugin.getConfig('ver');
         	if (plugin.pluginVersion != previousVersion) {
         		var text1 = 'Плагин ' + plugin.Name + 'обновлен до версии ' + plugin.pluginVersion, 
-        		    text2 = (plugin.url ? 'Подробности на форуме:' + plugin.url : '')};
+        		    text2 = plugin.info,
+        		    text3 = (plugin.url ? 'Подробности на форуме:' + plugin.url : '')};
         		this.notifications.add({
 				type: 'info',
-				text: text1,plugin.info,text2
+				text: text1,text2,text3
 			});
         	}
 
