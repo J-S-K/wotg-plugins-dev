@@ -143,12 +143,7 @@ function jslog(text) {
 		20: new Point(484, 1),
 		21: new Point(1217, 1),
 		22: new Point(237, 1),
-		23: new Point(972, 1),
-		28: new Point(650, 0),
-		29: new Point(650, 0),
-		30: new Point(650, 0)
-		
-
+		23: new Point(972, 1)
 	},
 	'JShqSlotsCoords' :{},
 	//координаты штаба
@@ -188,10 +183,7 @@ function jslog(text) {
 		20: new Point(225, 1),
 		21: new Point(620, 1),
 		22: new Point(77, 1),
-		23: new Point(850, 1),
-		28: new Point(348, 0),
-		29: new Point(348, 0),
-		30: new Point(348, 0)
+		23: new Point(850, 1)
 	},
     	'createBackButton': function method() {
     		method.previous.apply( this, arguments );
