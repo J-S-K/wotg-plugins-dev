@@ -36,7 +36,7 @@ function jslog(text) {
         	jslog(this, plugin.pluginVersion);
         	var previousVersion = plugin.getConfig('ver');
         	if (plugin.pluginVersion != previousVersion) {
-        		var text1 = 'Плагин ' + plugin.Name + 'обновлен до версии ' + plugin.pluginVersio + 
+        		var text = 'Плагин ' + plugin.Name + 'обновлен до версии ' + plugin.pluginVersio + 
         		    plugin.info +
         		    (plugin.url ? 'Подробности на форуме:' + plugin.url : '')};
         		this.notifications.add({
