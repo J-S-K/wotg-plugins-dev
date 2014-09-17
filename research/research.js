@@ -22,11 +22,11 @@ function jslog(text) {
 	//	atom.dom(plugin.getImage('test')).appendTo('body');
 	//	console.log(plugin.getImage('test'));
 	console.log('J_S afterLaunch');
-	var notifications = Wotg.UI.Notifications.Bubble
-			notifications.add({
-			type: 'info',
-			text: 'J_S afterLaunch'
-			})
+	var notifications = Wotg.UI.Notifications.Bubble;
+	notifications.add({
+		type: 'info',
+		text: 'J_S afterLaunch'
+		});
 	
 	});
 
