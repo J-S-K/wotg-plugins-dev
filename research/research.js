@@ -42,7 +42,7 @@ function jslog(text) {
 	plugin.refactor( 'Wotg.Research.HQItem', {
         // Меняем один из методов класса
         'getPos': function method() {
-        	jslog(this);
+        	jslog(this,this.manager.JSsmallHq,this.manager.JSbigHq);
         	if (this.isRootTree) return this.manager.hqSlotsCoords[this.slot];
         	if (this.isCurrent) {
 
