@@ -28,6 +28,7 @@ function jslog(text) {
         // Меняем один из методов класса
         'createNotifications': function method() {
         	method.previous.apply( this, arguments );
+        	jslog(this);
         	this.notifications.add({
 		type: 'info',
 		text: 'J_S afterLaunch'
