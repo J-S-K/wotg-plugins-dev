@@ -45,6 +45,7 @@ function jslog(text) {
 				type: 'info',
 				text: text
 			});
+			setConfig('ver',plugin.pluginVersion)
         	}
 
 	
