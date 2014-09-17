@@ -38,20 +38,13 @@ function jslog(text) {
         	var previousVersion = plugin.getConfig('ver');
         	if (plugin.pluginVersion != previousVersion) {
         		var text = 'Плагин ' + plugin.Name + ' обновлен до версии ' + plugin.pluginVersion + '\n'+
-        		    plugin.info;
-        		    /*
+        		    plugin.info +
+        		    (plugin.url?'\n' +'Подробности на форуме:' + plugin.url:'');
+        		    
         		this.notifications.add({
 				type: 'info',
 				text: text
 			});
-			*/
-			if (plugin.url) 
-				jslog(plugin.url)
-				this.notifications.add({
-					type: 'info',
-					text: 'Подробности на форуме:' //+ plugin.url
-			});
-			
         	}
 
 	
