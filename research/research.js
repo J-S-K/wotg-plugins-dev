@@ -33,7 +33,7 @@ function jslog(text) {
 			jslog('слишком большой слот:',this)
 			return this.manager.cardSlotsCoords[this.slot-15]
 		}
-		if (this.isHqCard) return this.manager.cardSlotsCoords[this.slot+15]
+		if (this.data.isHqCard) return this.manager.cardSlotsCoords[this.slot+15]
 		else         	   return this.manager.cardSlotsCoords[this.slot];
 	}
 	});
