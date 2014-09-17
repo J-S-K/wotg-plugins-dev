@@ -7,7 +7,7 @@ new Wotg.Plugins.Simple({
 		'test': 'image.png'
 	});
 */
-plugin.pluginVersion ='0.1.0';
+plugin.pluginVersion = '0.1.0';
 plugin.info = 'Стабильная версия';
 plugin.url = 'http://forum.worldoftanks.ru/index.php?/forum/483-моды-скины-плагины/';
 function jslog(text) {
@@ -31,12 +31,12 @@ function jslog(text) {
         // Меняем один из методов класса
         'createNotifications': function method() {
         	method.previous.apply( this, arguments );
-        	jslog(this);
+        	jslog(this, plugin.pluginVersion);
         	var previousVersion = plugin.getConfig('ver');
         	if (plugin.pluginVersion != previousVersion) {
         		var text = 'Плагин ' + plugin.Name + 'обновлен до версии ' + plugin.pluginVersion, 
         			plugin.info,
-        			(plugin.url?'Подробности на форуме:'+ plugin.url:'');
+        			(plugin.url ? 'Подробности на форуме:' + plugin.url : '');
         		this.notifications.add({
 				type: 'info',
 				text: text
