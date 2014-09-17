@@ -56,7 +56,7 @@ function jslog(text) {
         		} else	return slotCoords[1];
         		
         	}
-        	if (this.isParent) {
+        	if (this.data.isParent) {
 			return this.manager.cardSlotsCoords[this.slot+15];
         	}
 		return this.manager.cardSlotsCoords[this.slot];
