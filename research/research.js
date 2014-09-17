@@ -22,14 +22,19 @@ function jslog(text) {
 	//	atom.dom(plugin.getImage('test')).appendTo('body');
 	//	console.log(plugin.getImage('test'));
 	console.log('J_S afterLaunch');
-	var notifications = Wotg.UI.Notifications.Bubble;
-	notifications.add({
+	});
+	
+	plugin.refactor( 'Wotg.Components.Footer.Manager', {
+        // Меняем один из методов класса
+        'createNotifications': function method() {
+        	method.previous.apply( this, arguments );
+        	this.notifications.add({
 		type: 'info',
 		text: 'J_S afterLaunch'
 		});
 	
 	});
-
+        }
 	//========
 	plugin.refactor( 'Wotg.Research.CardItem', {
         // Меняем один из методов класса
