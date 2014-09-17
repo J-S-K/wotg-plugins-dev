@@ -94,7 +94,7 @@ function jslog(text) {
 			this.createHq(parenthq, false, false);
 		}
 		rootData.isParent = false;
-		this.createHq(rootData);
+		this.createHq(rootData, true, false);
 		for (var i = 0 ; i < list.length; i++) {
 			if (Wotg.controller().protos.get(list[i].card).type.toLowerCase() != 'hq') {
 				this.createCard(list[i]);
