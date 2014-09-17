@@ -15,7 +15,7 @@ plugin.url = 'http://forum.worldoftanks.ru/index.php?/forum/483-моды-ски�
 
 function jslog(text) {
 	
-	console.log.apply( console, ['[JS Log] '].append(arguments) );
+	//console.log.apply( console, ['[JS Log] '].append(arguments) );
 	
 }
 
