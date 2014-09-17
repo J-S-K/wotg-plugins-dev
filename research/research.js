@@ -43,7 +43,8 @@ function jslog(text) {
 				type: 'info',
 				text: text
 			});
-			if(plugin.url) 
+			if (plugin.url) 
+				jslog(plugin.url)
 				this.notifications.add({
 					type: 'info',
 					text: 'Подробности на форуме:' + plugin.url
