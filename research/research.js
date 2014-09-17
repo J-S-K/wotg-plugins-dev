@@ -42,55 +42,28 @@ function jslog(text) {
 	plugin.refactor( 'Wotg.Research.HQItem', {
         // Меняем один из методов класса
         'getPos': function method() {
+        	if (this.isRootTree) return this.manager.hqSlotsCoords[this.slot];
         	if (this.isCurrent) {
         		jslog(this,this.data.parents.length );
+        		if (this.manager.viewMode == 'compact') {
+        			var slotCoords = this.manager.JSsmallHq;
+        		} else {
+        			var slotCoords = this.manager.JSbigHq;	
+        		}
         		if (this.data.parents.length == 0) {
-        			return new Point(this.manager.JShqSlotsCoords[0].x,0);
-        		} else	return this.manager.JShqSlotsCoords[0];
-        		return this.manager.JShqSlotsCoords[0];
+        			return slotsCoords[0];
+        		} else	return slotsCoords[1];
+        		
         	}
-		if (this.isRootTree) return this.manager.hqSlotsCoords[this.slot];
+        	if (this.isParent) {
+			return this.manager.cardSlotsCoords[this.slot+15];
+        	}
 		return this.manager.cardSlotsCoords[this.slot];
 	}
 	});
-	
-	plugin.refactor( 'Wotg.Research.Manager', {
-        // Меняем один из методов класса
-        'setViewMode': function method(viewMode) {
-        	method.previous.apply( this, arguments );
-        	this.viewMode = viewMode;
-        if (viewMode == 'compact') {
-			this.JShqSlotsCoords = this.JSsmallHq;
-		//	this.HQcardSlotsCoords = this.HQsmallCards;
-		} else {
-			this.JShqSlotsCoords = this.JSbigHq;
-		//	this.HQcardSlotsCoords = this.HQbigCards;
-		}
-	}
-	});
-        	
-        	
-	plugin.refactor( 'Wotg.Research.Manager', {
-        // Меняем один из методов класса
 
-	'createHqHq': function  (data) {
-		
-		
-		if (data.parenthq) {
-			var parenthq = this.model.getCardById(data.parenthq);
-			if (parenthq.slot != 0)	parenthq.slot=15+parenthq.slot;
-			this.createHq(parenthq, false, false);
-		}
-		
-		var elem = new Wotg.Research.HQItem(this.app.layer, {
-			manager: this,
-			data: data,
-			isCurrent: true,
-			isRootTree: false
-		});
-		this.app.mouseHandler.subscribe(elem);
-		this.elems.push(elem);
-	},
+	plugin.refactor( 'Wotg.Research.Manager', {
+        // Меняем один из методов класса
         'createResearchTreeForHQ': function method(hqId) {
            	//this.backButton.text = Wotg.controller().lang.get('research.backToRoot');
 		this.isRoot = false;
@@ -112,17 +85,17 @@ function jslog(text) {
 		//imgNode.setComponent(component);
 		*/
 		//=====
-		this.createHqHq(rootData);
 		
+		
+		if (rootData.parenthq) {
+			var parenthq = this.model.getCardById(rootData.parenthq);
+			parenthq.isParent = true;
+			this.createHq(parenthq, false, false);
+		}
+		rootData.isParent = false;
+		this.createHq(rootData);
 		for (var i = 0 ; i < list.length; i++) {
-			/*
-			if (list[i].slot > 23) {
-				jslog('слишком большой слот:',list[i])
-				list[i].slot = list[i].slot-15;
-			}
-			*/
 			if (Wotg.controller().protos.get(list[i].card).type.toLowerCase() != 'hq') {
-
 				this.createCard(list[i]);
 			} else {
 				this.createHq(list[i], false, false);
@@ -132,13 +105,6 @@ function jslog(text) {
 		list =listHq;
 		for (var i = 0 ; i < list.length; i++) { 
 			list[i].isHqCard = true;
-			/*
-			if (list[i].slot<16)	list[i].slot = list[i].slot+15;
-			if (list[i].slot > 23) {
-				jslog('слишком большой слот:',list[i])
-				list[i].slot = list[i].slot-15;
-			}
-			*/
 			this.createCard(list[i]);
 		}
 		
@@ -186,12 +152,14 @@ function jslog(text) {
 	'JShqSlotsCoords' :{},
 	//координаты штаба
 	'JSbigHq' : {
-		0: new Point(690, 140)
+		0: new Point(690, 0),
+		1: new Point(690, 140)
 		
 	},
 	//координаты штаба compact
 	'JSsmallHq':{
-		0: new Point(375, 125)
+		0: new Point(375, 0),
+		1: new Point(375, 125)
 	},
 	//прокачиваемые карты  compact
 	'smallCards': {
