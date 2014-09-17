@@ -30,12 +30,13 @@ function jslog(text) {
         	method.previous.apply( this, arguments );
         	jslog(this);
         	this.notifications.add({
-		type: 'info',
-		text: 'J_S afterLaunch'
+			type: 'info',
+			text: 'J_S afterLaunch'
 		});
 	
-	});
         }
+        });
+        
 	//========
 	plugin.refactor( 'Wotg.Research.CardItem', {
         // Меняем один из методов класса
