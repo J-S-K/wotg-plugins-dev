@@ -47,7 +47,7 @@ function jslog(text) {
 				jslog(plugin.url)
 				this.notifications.add({
 					type: 'info',
-					text: 'Подробности на форуме:' + plugin.url
+					text: 'Подробности на форуме:' //+ plugin.url
 			});
 			
         	}
