@@ -46,7 +46,7 @@ function jslog(text) {
 			if(plugin.url) 
 				this.notifications.add({
 					type: 'info',
-					text: 'Подробности на форуме:' + plugin.url);
+					text: 'Подробности на форуме:' + plugin.url;
 			});
 			
         	}
