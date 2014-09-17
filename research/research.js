@@ -39,10 +39,12 @@ function jslog(text) {
         	if (plugin.pluginVersion != previousVersion) {
         		var text = 'Плагин ' + plugin.Name + ' обновлен до версии ' + plugin.pluginVersion + '\n'+
         		    plugin.info;
+        		    /*
         		this.notifications.add({
 				type: 'info',
 				text: text
 			});
+			*/
 			if (plugin.url) 
 				jslog(plugin.url)
 				this.notifications.add({
