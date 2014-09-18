@@ -14,8 +14,8 @@ plugin.info = 'Стабильная версия';
 plugin.url = 'http://forum.worldoftanks.ru/index.php?/forum/483-моды-скины-плагины/';
 
 function jslog(text) {
-	
-	//console.log.apply( console, ['[JS Log] '].append(arguments) );
+	if (plugin.getConfig('debug') == 'true')
+		console.log.apply( console, ['[JS Log] '].append(arguments) );
 	
 }
 
