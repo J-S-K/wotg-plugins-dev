@@ -9,8 +9,8 @@ new Wotg.Plugins.Simple({
 */
 jslog(plugin);
 plugin.Name = 'Альтернативное Исследование';
-plugin.pluginVersion = '0.1.0';
-plugin.info = 'Стабильная версия';
+plugin.pluginVersion = '0.1.1';
+plugin.info = 'Стабильная версия + исправленные баги.';
 plugin.url = 'http://forum.worldoftanks.ru/index.php?/forum/483-моды-скины-плагины/';
 
 function jslog(text) {
