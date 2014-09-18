@@ -291,6 +291,7 @@ function jslog(text) {
 		hight = 127,
 		x = this.slotX % columns,
 		y= (this.slotX-x) / columns;
+		jslog(slotX);
 		return new Point (x*width,y*hight+40);
 	}
     });
