@@ -170,13 +170,13 @@ function jslog(text) {
 		15: new Point(1139, 679),
 		
 		16: new Point(484, 140), 
-		17: new Point(1217, 140),//101
+		17: new Point(972, 140),//101
 		18: new Point(237, 140),
-		19: new Point(972, 140),
+		19: new Point(1217, 140),
 		20: new Point(484, 1),
-		21: new Point(1217, 1),
+		21: new Point(972, 1),
 		22: new Point(237, 1),
-		23: new Point(972, 1)
+		23: new Point(1217, 1)
 	},
 	'JShqSlotsCoords' :{},
 	//координаты штаба
