@@ -65,9 +65,10 @@ function jslog(text) {
 	}
 	});
 
-	//удалить если будут меняться координаты штаба 
-	plugin.refactor( 'Wotg.Research.HQItem', {
+    	plugin.refactor( 'Wotg.Research.HQItem', {
         // Меняем один из методов класса
+        'size'       : new Size(285, 80), // непонятно работает ли
+        'sizeCurrent': new Size(215, 131), //342,200 ----- 300,84 //размер штаба
         'getPos': function method() {
         	jslog(this);
         	if (this.isRootTree) return this.manager.hqSlotsCoords[this.slot];
@@ -92,6 +93,10 @@ function jslog(text) {
 
 	plugin.refactor( 'Wotg.Research.Manager', {
         // Меняем один из методов класса
+        'setViewMode': function method(viewMode) {		
+        	method.previous.apply( this, arguments );		
+        	this.viewMode = viewMode;
+        },
         'createResearchTreeForHQ': function method(hqId) {
            	//this.backButton.text = Wotg.controller().lang.get('research.backToRoot');
 		this.isRoot = false;
@@ -288,11 +293,7 @@ function jslog(text) {
 		return new Point (x*width,y*hight+40);
 	}
     });
-    
-    plugin.refactor( 'Wotg.Research.HQItem', {
-    	'size'       : new Size(285, 80), // непонятно работает ли
-        'sizeCurrent': new Size(215, 131) //342,200 ----- 300,84 //размер штаба
-    });
+
     plugin.refactor( 'Wotg.Research.Lines', {
 	drawLine: function(from, to) {
 		var rect = new Rectangle(from,to);
