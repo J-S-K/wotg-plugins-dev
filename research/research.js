@@ -289,9 +289,9 @@ function jslog(text) {
 		var columns = 12,
 		width = 127,
 		hight = 127,
-		x = this.slotX % columns,
-		y= (this.slotX-x) / columns;
-		jslog(slotX);
+		x = this.data.slotX % columns,
+		y= (this.data.slotX-x) / columns;
+		//jslog(slotX);
 		return new Point (x*width,y*hight+40);
 	}
     });
