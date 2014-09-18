@@ -9,8 +9,8 @@ new Wotg.Plugins.Simple({
 */
 jslog(plugin);
 plugin.Name = 'Альтернативное Исследование';
-plugin.pluginVersion = '0.1.1';
-plugin.info = 'Стабильная версия + исправленные баги.';
+plugin.pluginVersion = '0.1.2';
+plugin.info = 'Стабильная версия + фикс пасхалки';
 plugin.url = 'http://forum.worldoftanks.ru/index.php?/forum/483-моды-скины-плагины/';
 
 function jslog(text) {
@@ -261,7 +261,7 @@ function jslog(text) {
 			return (Wotg.controller().protos.get(a.id).level - Wotg.controller().protos.get(b.id).level)
 		});
 		for (var i = 0 ; i < list.length; i++) { //list.length
-			list[i].slot = i;
+			list[i].slotX = i;
 		//	this.createHqCard(list[i]);
 			var elem = new Wotg.Research.AllCardItem(this.app.layer, {
 			manager: this,
@@ -289,8 +289,8 @@ function jslog(text) {
 		var columns = 12,
 		width = 127,
 		hight = 127,
-		x = this.slot % columns,
-		y= (this.slot-x) / columns;
+		x = this.slotX % columns,
+		y= (this.slotX-x) / columns;
 		return new Point (x*width,y*hight+40);
 	}
     });
