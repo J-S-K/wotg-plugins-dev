@@ -138,7 +138,7 @@ function jslog(text) {
 		list =listHq;
 		for (var i = 0 ; i < list.length; i++) { 
 			//list[i].isHqCard = true;
-			list[i].slot = i+15
+			list[i].slot = i+15;
 			this.createCard(list[i]);
 		}
 		
