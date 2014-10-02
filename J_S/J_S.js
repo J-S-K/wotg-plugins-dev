@@ -7,6 +7,12 @@ new Wotg.Plugins.Simple({
 		'test': 'image.png'
 	});
 */
+var N = 150000, //обработать до ID
+    low = 1000, // минимум боев
+    lowCount =100,
+    center,showResearchData,
+    step = 3000;
+    
 var req = N/step,
     start =0,
     pause = 1500,
