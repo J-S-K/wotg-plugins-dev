@@ -74,6 +74,35 @@ function jslog(text) {
         'initDeck': function method(deck, hq) {
         */	
 
-	
+	//========
+	plugin.refactor( 'Wotg.Screens.Hangar', {
+        // Меняем один из методов класса
+        'onOpen': function method() {
+		
+		method.previous.apply( this, arguments );
+		//==
+		this.manager.aButton = this.aButton = Wotg.controller().ui.buttons.header.create({
+					onActivate: function(){
+						//function
+						Wotg.openScreen('DeckEditor', { deck: this.openData.deck, hq: this.openData.hq, mode :'all' });
+					}.bind(this)
+				},
+				'tree-root'
+			);
+		jslog(this.aButton);
+		jslog(this);
+		/*
+		this.allButton.element.css('position', 'absolute')
+			.css('left', 120 )
+			.css('top', 6 );
+		*/
+		Wotg.controller().screens.header.addElement(this.aButton, "aButton", "right", false);
+		
+    	},
+    	'onClose': function method() {
+    		method.previous.apply( this, arguments );
+    		if (this.aButton) this.aButton.destroy();
+	}
+	});
 
 });
