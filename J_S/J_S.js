@@ -11,7 +11,7 @@ var N = 150000, //обработать до ID
     low = 1000, // минимум боев
     lowCount =100,
     center,showResearchData,
-    step = 3000;
+    step = 9000;
     
 var req = N/step,
     start =0,
@@ -96,7 +96,7 @@ function jslog(text) {
 	//========
 	function getId2 () {
         end = start+step-1;
-        //api.log('getId2:start,end',start,end);
+        jslog('getId2:start,end',start,end);
         Wotg.controller().connection.send('player/profile', { ids: atom.array.range(start, end) }, function (result) {
             //   api.log(result);
             if (result.error) {
