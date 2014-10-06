@@ -55,9 +55,10 @@ function jslog(text) {
 			list[i].slotX = i;
 		//	this.createHqCard(list[i]);
 			var elem = new Wotg.Research.AllCardItem(this.app.layer, {
-			manager: this,
-			data: list[i]
-		});
+				manager: this,
+				data: list[i]
+			});
+		};
 		
 	},
         // Меняем один из методов класса
