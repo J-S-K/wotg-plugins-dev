@@ -50,6 +50,14 @@ function jslog(text) {
 	'showAll': function method() {
 		jslog('allMode', this);
 		jslog(this.openData.deck, this.openData.hq);
+		var list = this.openData.deck.cards;
+		for (var i = 0 ; i < list.length; i++) { //list.length
+			list[i].slotX = i;
+		//	this.createHqCard(list[i]);
+			var elem = new Wotg.Research.AllCardItem(this.app.layer, {
+			manager: this,
+			data: list[i]
+		});
 		
 	},
         // Меняем один из методов класса
