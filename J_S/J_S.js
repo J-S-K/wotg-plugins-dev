@@ -47,7 +47,7 @@ function jslog(text) {
 	});
 	//========
 	plugin.refactor( 'Wotg.Screens.DeckEditor', {
-	'showAll' function method() {
+	'showAll': function method() {
 		jslog('allMode', this);
 		jslog(this.openData.deck, this.openData.hq);
 		
