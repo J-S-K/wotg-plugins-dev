@@ -32,6 +32,8 @@ function jslog(text) {
 	
 }
 
+
+
 	events.add('initialize', function () {
 		console.log(plugin.title +' version ' + plugin.version + ' from ' + plugin.repository + ' initialized');
 
@@ -45,6 +47,11 @@ function jslog(text) {
 	});
 	//========
 	plugin.refactor( 'Wotg.Screens.DeckEditor', {
+	'showAll' function method() {
+		jslog('allMode', this);
+		jslog(this.openData.deck, this.openData.hq);
+		
+	},
         // Меняем один из методов класса
         'onOpen': function method() {
 		if(this.isOpenFirstTime) {
@@ -79,7 +86,7 @@ function jslog(text) {
 			this.manager.initDeck(this.openData.deck, this.openData.hq);
 			this.manager.resize(this.currentViewMode);
 		} else {
-			jslog('allMode');
+			this.showAll();
 		}
     	},
     	'onClose': function method() {
